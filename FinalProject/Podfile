@@ -6,5 +6,7 @@ target 'FinalProject' do
   use_frameworks!
 
   # Pods for FinalProject
-pod 'Firebase/Core'
+  pod 'Firebase/Core'
+  pod 'FirebaseAuth'
+  pod 'GoogleSignIn'
 end
