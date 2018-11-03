@@ -15,6 +15,7 @@
 		3C4AA0A4218C9098006DE138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4AA0A2218C9098006DE138 /* Main.storyboard */; };
 		3C4AA0A6218C909D006DE138 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C4AA0A5218C909D006DE138 /* Assets.xcassets */; };
 		3C4AA0A9218C909D006DE138 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4AA0A7218C909D006DE138 /* LaunchScreen.storyboard */; };
+		3CFCEEEB218E0E1200591625 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCEEEA218E0E1200591625 /* LogoutViewController.swift */; };
 		BE42802D94B29D6B10FCF298 /* Pods_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B94397762FE5AC271FA787 /* Pods_FinalProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		3C4AA0A5218C909D006DE138 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C4AA0A8218C909D006DE138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C4AA0AA218C909D006DE138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CFCEEEA218E0E1200591625 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		C4B94397762FE5AC271FA787 /* Pods_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E520C59698691F60939E379B /* Pods-FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +69,7 @@
 		3C4AA09D218C9098006DE138 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				3CC0190D218E0888007DDB3C /* User */,
 				3C4AA09E218C9098006DE138 /* AppDelegate.swift */,
 				3C4AA0A0218C9098006DE138 /* LauncherViewController.swift */,
 				3C4AA0A2218C9098006DE138 /* Main.storyboard */,
@@ -74,10 +77,18 @@
 				3C4AA0A7218C909D006DE138 /* LaunchScreen.storyboard */,
 				3C4AA0AA218C909D006DE138 /* Info.plist */,
 				3C3AC8AB218D580E0099B741 /* GoogleService-Info.plist */,
-				3C3AC876218CC9E00099B741 /* LoginViewController.swift */,
-				3C3AC878218CF90E0099B741 /* RegisterViewController.swift */,
 			);
 			path = FinalProject;
+			sourceTree = "<group>";
+		};
+		3CC0190D218E0888007DDB3C /* User */ = {
+			isa = PBXGroup;
+			children = (
+				3C3AC876218CC9E00099B741 /* LoginViewController.swift */,
+				3C3AC878218CF90E0099B741 /* RegisterViewController.swift */,
+				3CFCEEEA218E0E1200591625 /* LogoutViewController.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		BA3E0CC91EF6FA77FDAF022F /* Pods */ = {
@@ -203,6 +214,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -213,6 +225,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +265,7 @@
 				3C3AC877218CC9E00099B741 /* LoginViewController.swift in Sources */,
 				3C4AA0A1218C9098006DE138 /* LauncherViewController.swift in Sources */,
 				3C4AA09F218C9098006DE138 /* AppDelegate.swift in Sources */,
+				3CFCEEEB218E0E1200591625 /* LogoutViewController.swift in Sources */,
 				3C3AC879218CF90E0099B741 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
