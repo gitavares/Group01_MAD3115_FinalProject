@@ -13,7 +13,7 @@ class LauncherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let loginVC = sb.instantiateViewController(withIdentifier: "loginVC")
             self.present(loginVC, animated: true, completion: nil)
