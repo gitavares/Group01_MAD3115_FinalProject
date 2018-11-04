@@ -15,7 +15,7 @@
 		3C4AA0A4218C9098006DE138 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4AA0A2218C9098006DE138 /* Main.storyboard */; };
 		3C4AA0A6218C909D006DE138 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C4AA0A5218C909D006DE138 /* Assets.xcassets */; };
 		3C4AA0A9218C909D006DE138 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4AA0A7218C909D006DE138 /* LaunchScreen.storyboard */; };
-		3CFCEEEB218E0E1200591625 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCEEEA218E0E1200591625 /* LogoutViewController.swift */; };
+		3C7BC4E1218E3CFF001E15C2 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7BC4E0218E3CFF001E15C2 /* TestViewController.swift */; };
 		BE42802D94B29D6B10FCF298 /* Pods_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B94397762FE5AC271FA787 /* Pods_FinalProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +31,7 @@
 		3C4AA0A5218C909D006DE138 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C4AA0A8218C909D006DE138 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C4AA0AA218C909D006DE138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3CFCEEEA218E0E1200591625 /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		3C7BC4E0218E3CFF001E15C2 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		C4B94397762FE5AC271FA787 /* Pods_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E520C59698691F60939E379B /* Pods-FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,7 +86,7 @@
 			children = (
 				3C3AC876218CC9E00099B741 /* LoginViewController.swift */,
 				3C3AC878218CF90E0099B741 /* RegisterViewController.swift */,
-				3CFCEEEA218E0E1200591625 /* LogoutViewController.swift */,
+				3C7BC4E0218E3CFF001E15C2 /* TestViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -188,12 +188,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +269,7 @@
 				3C3AC877218CC9E00099B741 /* LoginViewController.swift in Sources */,
 				3C4AA0A1218C9098006DE138 /* LauncherViewController.swift in Sources */,
 				3C4AA09F218C9098006DE138 /* AppDelegate.swift in Sources */,
-				3CFCEEEB218E0E1200591625 /* LogoutViewController.swift in Sources */,
+				3C7BC4E1218E3CFF001E15C2 /* TestViewController.swift in Sources */,
 				3C3AC879218CF90E0099B741 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
