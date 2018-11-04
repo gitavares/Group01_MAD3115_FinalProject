@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LauncherViewController: UIViewController {
 
@@ -19,6 +20,14 @@ class LauncherViewController: UIViewController {
             self.present(loginVC, animated: true, completion: nil)
         }
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let user = Auth.auth().currentUser {
+            self.performSegue(withIdentifier: "testVC", sender: self)
+        }
     }
 
 

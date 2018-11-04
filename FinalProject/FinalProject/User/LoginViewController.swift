@@ -8,15 +8,18 @@
 
 import UIKit
 import Firebase
-import GoogleSignIn
+//import GoogleSignIn
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GIDSignIn.sharedInstance().uiDelegate = self as? GIDSignInUIDelegate
-        GIDSignIn.sharedInstance().signInSilently()
+//        GIDSignIn.sharedInstance().uiDelegate = self as? GIDSignInUIDelegate
+//        GIDSignIn.sharedInstance().signInSilently()
         
         
 //        handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
@@ -26,6 +29,19 @@ class LoginViewController: UIViewController {
 //            }
 //        }
     }
+    
+    @IBAction func btnLogin(_ sender: UIButton) {
+        
+        Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) { user, error in
+            if error == nil && user != nil {
+                self.dismiss(animated: false, completion: nil)
+            } else {
+                print("Error login: \(error)")
+            }
+        }
+        
+    }
+    
     
 //    deinit {
 //        if let handle = handle {
