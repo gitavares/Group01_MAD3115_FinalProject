@@ -36,6 +36,9 @@ class LoginViewController: UIViewController {
             if error == nil && user != nil {
                 self.dismiss(animated: false, completion: nil)
             } else {
+                let alert = UIAlertController(title: "Error", message: "Login/Password incorrect", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
+                self.present(alert, animated: true)
                 print("Error login: \(error)")
             }
         }
