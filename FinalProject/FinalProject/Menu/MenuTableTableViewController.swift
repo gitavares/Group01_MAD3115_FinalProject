@@ -7,63 +7,65 @@
 //
 
 import UIKit
+import Firebase
 
 class MenuTableTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        if let user = Auth.auth().currentUser {
+            // do something
+        } else {
+            backToLogin()
+        }
+        
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return section == 0 ? 4 : 3
+//        return section == 0 ? 4 : 3
+        return 4
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView.indexPathForSelectedRow?.section == 0
-        {
-            if indexPath.row == 0
-            {
-                print("Home")
-            }
-        }
-        else if indexPath.row == 1
-        {
-            print("ADD Ticket")
-        }
-        else if indexPath.row == 1
-        {
-            print("Report")
-        }
-        else if indexPath.row == 1
-        {
-            print("Location")
-        }else if tableView.indexPathForSelectedRow?.section == 1
-        {
-            switch indexPath.row
-            {
+        if tableView.indexPathForSelectedRow?.section == 0 {
+            switch indexPath.row {
             case 0:
-                print("Location")
+                print("Home")
             case 1:
-                print("About Us")
+                print("Add Ticket")
             case 2:
-                print("logout")
+                print("Report")
+            case 3:
+                print("Location")
             default:
                 print("none")
             }
+        } else if tableView.indexPathForSelectedRow?.section == 1 {
+            switch indexPath.row {
+                case 0:
+                    print("Location")
+                case 1:
+                    print("About Us")
+                case 2:
+                    print("Instructions")
+                case 3:
+                    try! Auth.auth().signOut()
+                    backToLogin()
+                default:
+                    print("none")
+            }
         }
+    }
+    
+    func backToLogin() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let loginVC = sb.instantiateViewController(withIdentifier: "loginVC")
+        self.present(loginVC, animated: true, completion: nil)
     }
 
     /*

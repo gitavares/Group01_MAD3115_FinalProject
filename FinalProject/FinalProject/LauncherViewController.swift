@@ -26,7 +26,8 @@ class LauncherViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if let user = Auth.auth().currentUser {
-            self.performSegue(withIdentifier: "testVC", sender: self)
+//            self.performSegue(withIdentifier: "testVC", sender: self)
+            self.performSegue(withIdentifier: "menuVC", sender: self)
         }
     }
 

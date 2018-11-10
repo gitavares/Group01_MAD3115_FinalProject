@@ -89,19 +89,27 @@
 		3C4AA09D218C9098006DE138 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				3C69724F219652C000DF9C23 /* Menu */,
 				C88F9D552192756200D9EF81 /* Images */,
 				3C6993CD2190D6EE00BEA7C9 /* Utils */,
 				3CC0190D218E0888007DDB3C /* User */,
 				3C4AA09E218C9098006DE138 /* AppDelegate.swift */,
 				3C4AA0A0218C9098006DE138 /* LauncherViewController.swift */,
 				3C4AA0A2218C9098006DE138 /* Main.storyboard */,
-				C88F9D4B2192646C00D9EF81 /* MenuTableTableViewController.swift */,
 				3C4AA0A5218C909D006DE138 /* Assets.xcassets */,
 				3C4AA0A7218C909D006DE138 /* LaunchScreen.storyboard */,
 				3C4AA0AA218C909D006DE138 /* Info.plist */,
 				3C3AC8AB218D580E0099B741 /* GoogleService-Info.plist */,
 			);
 			path = FinalProject;
+			sourceTree = "<group>";
+		};
+		3C69724F219652C000DF9C23 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C88F9D4B2192646C00D9EF81 /* MenuTableTableViewController.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		3C6993CD2190D6EE00BEA7C9 /* Utils */ = {
