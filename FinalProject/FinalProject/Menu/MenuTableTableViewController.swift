@@ -48,11 +48,11 @@ class MenuTableTableViewController: UITableViewController {
         } else if tableView.indexPathForSelectedRow?.section == 1 {
             switch indexPath.row {
                 case 0:
-                    print("Location")
+                    editProfile()
                 case 1:
-                    print("About Us")
-                case 2:
                     print("Instructions")
+                case 2:
+                    print("Contact")
                 case 3:
                     try! Auth.auth().signOut()
                     backToLogin()
@@ -66,6 +66,10 @@ class MenuTableTableViewController: UITableViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let loginVC = sb.instantiateViewController(withIdentifier: "loginVC")
         self.present(loginVC, animated: true, completion: nil)
+    }
+    
+    func editProfile() {
+        self.performSegue(withIdentifier: "editUserVC", sender: self)
     }
 
     /*

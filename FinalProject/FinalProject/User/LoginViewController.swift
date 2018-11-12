@@ -11,6 +11,8 @@ import Firebase
 //import GoogleSignIn
 
 class LoginViewController: UIViewController {
+    
+    var alertMessage = UIApplication.shared.delegate as! AppDelegate
 
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
@@ -34,12 +36,13 @@ class LoginViewController: UIViewController {
         
         Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) { user, error in
             if error == nil && user != nil {
-                self.dismiss(animated: false, completion: nil)
+//                self.dismiss(animated: false, completion: nil)
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                let navMenuVC = sb.instantiateViewController(withIdentifier: "navMenuVC")
+                self.present(navMenuVC, animated: true, completion: nil)
             } else {
-                let alert = UIAlertController(title: "Error", message: "Login/Password incorrect", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
-                self.present(alert, animated: true)
-                print("Error login: \(error)")
+                self.alertMessage.alertMessage(message: "Login/Password incorrect")
+                self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
             }
         }
         

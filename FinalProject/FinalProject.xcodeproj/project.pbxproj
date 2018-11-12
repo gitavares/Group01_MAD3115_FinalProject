@@ -17,6 +17,10 @@
 		3C4AA0A9218C909D006DE138 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4AA0A7218C909D006DE138 /* LaunchScreen.storyboard */; };
 		3C6993CF2190D70900BEA7C9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6993CE2190D70900BEA7C9 /* Utils.swift */; };
 		3C7BC4E1218E3CFF001E15C2 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7BC4E0218E3CFF001E15C2 /* TestViewController.swift */; };
+		3CC9AE562199F07000BD2E75 /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9AE552199F07000BD2E75 /* EditUserViewController.swift */; };
+		3CC9AE582199F1DE00BD2E75 /* giselle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9AE572199F1DE00BD2E75 /* giselle.jpg */; };
+		3CC9AE63219A083500BD2E75 /* outline_mail_outline_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9AE61219A083400BD2E75 /* outline_mail_outline_black_24dp.png */; };
+		3CC9AE64219A083500BD2E75 /* outline_contact_support_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9AE62219A083400BD2E75 /* outline_contact_support_black_24dp.png */; };
 		BE42802D94B29D6B10FCF298 /* Pods_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B94397762FE5AC271FA787 /* Pods_FinalProject.framework */; };
 		C88F9D4C2192646C00D9EF81 /* MenuTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9D4B2192646C00D9EF81 /* MenuTableTableViewController.swift */; };
 		C88F9D5E2192756F00D9EF81 /* outline_home_black_24pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C88F9D562192756E00D9EF81 /* outline_home_black_24pt_2x.png */; };
@@ -43,6 +47,10 @@
 		3C4AA0AA218C909D006DE138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C6993CE2190D70900BEA7C9 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		3C7BC4E0218E3CFF001E15C2 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		3CC9AE552199F07000BD2E75 /* EditUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
+		3CC9AE572199F1DE00BD2E75 /* giselle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = giselle.jpg; sourceTree = "<group>"; };
+		3CC9AE61219A083400BD2E75 /* outline_mail_outline_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline_mail_outline_black_24dp.png; sourceTree = "<group>"; };
+		3CC9AE62219A083400BD2E75 /* outline_contact_support_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline_contact_support_black_24dp.png; sourceTree = "<group>"; };
 		C4B94397762FE5AC271FA787 /* Pods_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88F9D4B2192646C00D9EF81 /* MenuTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableTableViewController.swift; sourceTree = "<group>"; };
 		C88F9D562192756E00D9EF81 /* outline_home_black_24pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline_home_black_24pt_2x.png; sourceTree = "<group>"; };
@@ -126,6 +134,7 @@
 				3C3AC876218CC9E00099B741 /* LoginViewController.swift */,
 				3C3AC878218CF90E0099B741 /* RegisterViewController.swift */,
 				3C7BC4E0218E3CFF001E15C2 /* TestViewController.swift */,
+				3CC9AE552199F07000BD2E75 /* EditUserViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -142,6 +151,9 @@
 		C88F9D552192756200D9EF81 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3CC9AE62219A083400BD2E75 /* outline_contact_support_black_24dp.png */,
+				3CC9AE61219A083400BD2E75 /* outline_mail_outline_black_24dp.png */,
+				3CC9AE572199F1DE00BD2E75 /* giselle.jpg */,
 				C88F9D592192756E00D9EF81 /* outline_assessment_black_24pt_2x.png */,
 				C88F9D582192756E00D9EF81 /* outline_credit_card_black_24pt_2x.png */,
 				C88F9D572192756E00D9EF81 /* outline_exit_to_app_black_24pt_2x.png */,
@@ -226,6 +238,7 @@
 				3C4AA0A9218C909D006DE138 /* LaunchScreen.storyboard in Resources */,
 				C88F9D602192756F00D9EF81 /* outline_credit_card_black_24pt_2x.png in Resources */,
 				C88F9D642192756F00D9EF81 /* outline_location_on_black_24pt_2x.png in Resources */,
+				3CC9AE582199F1DE00BD2E75 /* giselle.jpg in Resources */,
 				3C3AC8AC218D580E0099B741 /* GoogleService-Info.plist in Resources */,
 				3C4AA0A6218C909D006DE138 /* Assets.xcassets in Resources */,
 				C88F9D5F2192756F00D9EF81 /* outline_exit_to_app_black_24pt_2x.png in Resources */,
@@ -233,6 +246,8 @@
 				3C4AA0A4218C9098006DE138 /* Main.storyboard in Resources */,
 				C88F9D5E2192756F00D9EF81 /* outline_home_black_24pt_2x.png in Resources */,
 				C88F9D632192756F00D9EF81 /* outline_receipt_black_24pt_2x.png in Resources */,
+				3CC9AE64219A083500BD2E75 /* outline_contact_support_black_24dp.png in Resources */,
+				3CC9AE63219A083500BD2E75 /* outline_mail_outline_black_24dp.png in Resources */,
 				C88F9D612192756F00D9EF81 /* outline_assessment_black_24pt_2x.png in Resources */,
 				C88F9D652192756F00D9EF81 /* outline_time_to_leave_black_24pt_2x.png in Resources */,
 			);
@@ -319,6 +334,7 @@
 				3C3AC877218CC9E00099B741 /* LoginViewController.swift in Sources */,
 				3C4AA0A1218C9098006DE138 /* LauncherViewController.swift in Sources */,
 				3C4AA09F218C9098006DE138 /* AppDelegate.swift in Sources */,
+				3CC9AE562199F07000BD2E75 /* EditUserViewController.swift in Sources */,
 				3C7BC4E1218E3CFF001E15C2 /* TestViewController.swift in Sources */,
 				C88F9D4C2192646C00D9EF81 /* MenuTableTableViewController.swift in Sources */,
 				3C3AC879218CF90E0099B741 /* RegisterViewController.swift in Sources */,
