@@ -18,9 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var alert: UIAlertController?
     
-    
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
@@ -61,6 +58,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert!.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
 //        self.present(alert, animated: true)
+    }
+    
+    func successMessage(message: String){
+        alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
+        alert!.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        //        self.present(alert, animated: true)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
