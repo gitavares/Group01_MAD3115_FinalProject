@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C294EC2219B43FF0027042B /* ParkingLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C294EC1219B43FF0027042B /* ParkingLocationViewController.swift */; };
 		3C3AC877218CC9E00099B741 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3AC876218CC9E00099B741 /* LoginViewController.swift */; };
 		3C3AC879218CF90E0099B741 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3AC878218CF90E0099B741 /* RegisterViewController.swift */; };
 		3C3AC8AC218D580E0099B741 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C3AC8AB218D580E0099B741 /* GoogleService-Info.plist */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		18AE7259AED7F2FB6E03A25A /* Pods-FinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.release.xcconfig"; sourceTree = "<group>"; };
+		3C294EC1219B43FF0027042B /* ParkingLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLocationViewController.swift; sourceTree = "<group>"; };
 		3C3AC876218CC9E00099B741 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3C3AC878218CF90E0099B741 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3C3AC8AB218D580E0099B741 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C294EC0219B43C00027042B /* ParkingLocation */ = {
+			isa = PBXGroup;
+			children = (
+				3C294EC1219B43FF0027042B /* ParkingLocationViewController.swift */,
+			);
+			path = ParkingLocation;
+			sourceTree = "<group>";
+		};
 		3C4AA092218C9097006DE138 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +107,7 @@
 		3C4AA09D218C9098006DE138 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				3C294EC0219B43C00027042B /* ParkingLocation */,
 				3C69724F219652C000DF9C23 /* Menu */,
 				C88F9D552192756200D9EF81 /* Images */,
 				3C6993CD2190D6EE00BEA7C9 /* Utils */,
@@ -331,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C294EC2219B43FF0027042B /* ParkingLocationViewController.swift in Sources */,
 				3C3AC877218CC9E00099B741 /* LoginViewController.swift in Sources */,
 				3C4AA0A1218C9098006DE138 /* LauncherViewController.swift in Sources */,
 				3C4AA09F218C9098006DE138 /* AppDelegate.swift in Sources */,
@@ -486,7 +498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8FGQUSGK88;
+				DEVELOPMENT_TEAM = 9YGPLVL77V;
 				INFOPLIST_FILE = FinalProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -505,7 +517,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8FGQUSGK88;
+				DEVELOPMENT_TEAM = 9YGPLVL77V;
 				INFOPLIST_FILE = FinalProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

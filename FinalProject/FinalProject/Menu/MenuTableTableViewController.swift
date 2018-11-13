@@ -41,7 +41,7 @@ class MenuTableTableViewController: UITableViewController {
             case 2:
                 print("Report")
             case 3:
-                print("Location")
+                location()
             default:
                 print("none")
             }
@@ -70,6 +70,10 @@ class MenuTableTableViewController: UITableViewController {
     
     func editProfile() {
         self.performSegue(withIdentifier: "editUserVC", sender: self)
+    }
+    
+    func location() {
+        self.performSegue(withIdentifier: "locationVC", sender: self)
     }
 
     /*
