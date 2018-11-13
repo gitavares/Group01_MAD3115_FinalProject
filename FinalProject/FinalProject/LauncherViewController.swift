@@ -10,9 +10,13 @@ import UIKit
 import Firebase
 
 class LauncherViewController: UIViewController {
+    
+    var ref: DatabaseReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -26,11 +30,12 @@ class LauncherViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if let user = Auth.auth().currentUser {
-//            self.performSegue(withIdentifier: "testVC", sender: self)
+            let childUpdates = ["lastLogin": Date().currentDateTime]
+            ref.child("users/profile/\(user.uid)").updateChildValues(childUpdates)
+            
             self.performSegue(withIdentifier: "navMenuVC", sender: self)
         }
     }
-
 
 }
 

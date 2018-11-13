@@ -13,12 +13,15 @@ import Firebase
 class LoginViewController: UIViewController {
     
     var alertMessage = UIApplication.shared.delegate as! AppDelegate
+    var ref: DatabaseReference!
 
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference()
         
 //        GIDSignIn.sharedInstance().uiDelegate = self as? GIDSignInUIDelegate
 //        GIDSignIn.sharedInstance().signInSilently()
@@ -37,6 +40,8 @@ class LoginViewController: UIViewController {
         Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) { user, error in
             if error == nil && user != nil {
 //                self.dismiss(animated: false, completion: nil)
+                self.saveLastLogin()
+                
                 let sb = UIStoryboard(name: "Main", bundle: nil)
                 let navMenuVC = sb.instantiateViewController(withIdentifier: "navMenuVC")
                 self.present(navMenuVC, animated: true, completion: nil)
@@ -46,6 +51,12 @@ class LoginViewController: UIViewController {
             }
         }
         
+    }
+    
+    func saveLastLogin() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let childUpdates = ["lastLogin": Date().currentDateTime]
+        ref.child("users/profile/\(uid)").updateChildValues(childUpdates)
     }
     
     

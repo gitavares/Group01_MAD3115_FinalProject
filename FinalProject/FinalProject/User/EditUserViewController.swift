@@ -13,10 +13,7 @@ class EditUserViewController: UIViewController {
 
     var alertMessage = UIApplication.shared.delegate as! AppDelegate
     var ref: DatabaseReference!
-//    var refHandle: DatabaseHandle!
-    
-    
-    
+
     // pending -- backlog
     @IBOutlet weak var imgProfile: UIImageView!
     
@@ -26,6 +23,8 @@ class EditUserViewController: UIViewController {
     @IBOutlet weak var txtConfirmPassword: UITextField!
     @IBOutlet weak var txtContactNumber: UITextField!
     @IBOutlet weak var txtCarPlateNumber: UITextField!
+    @IBOutlet weak var lblLastLogin: UILabel!
+    
     
     
     override func viewDidLoad() {
@@ -40,15 +39,17 @@ class EditUserViewController: UIViewController {
             let name = value?["name"] as? String ?? ""
             let contactNumber = value?["contactNumber"] as? String ?? ""
             let carPlateNumber = value?["carPlateNumber"] as? String ?? ""
+            let lastLogin = value?["lastLogin"] as? String ?? ""
             
             self.txtName.text = "\(name)"
             self.txtContactNumber.text = "\(contactNumber)"
             self.txtCarPlateNumber.text = "\(carPlateNumber)"
+            
+            self.lblLastLogin.text = "\(lastLogin)"
         })
         
         self.txtEmail.text = "\(email)"
         self.txtEmail.isEnabled = false
-        
     }
     
     
@@ -129,8 +130,7 @@ class EditUserViewController: UIViewController {
     func saveUser() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        let userData = ["uid": uid,
-                    "name": txtName.text!,
+        let userData = ["name": txtName.text!,
                     "contactNumber": txtContactNumber.text!,
                     "carPlateNumber": txtCarPlateNumber.text!,
                     "lastLogin": Date().currentDateTime]
