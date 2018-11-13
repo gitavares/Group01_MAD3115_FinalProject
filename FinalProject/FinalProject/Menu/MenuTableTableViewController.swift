@@ -52,7 +52,7 @@ class MenuTableTableViewController: UITableViewController {
                 case 1:
                     print("Instructions")
                 case 2:
-                    print("Contact")
+                    contact()
                 case 3:
                     try! Auth.auth().signOut()
                     backToLogin()
@@ -74,6 +74,10 @@ class MenuTableTableViewController: UITableViewController {
     
     func location() {
         self.performSegue(withIdentifier: "locationVC", sender: self)
+    }
+    
+    func contact() {
+        self.performSegue(withIdentifier: "contactVC", sender: self)
     }
 
     /*
