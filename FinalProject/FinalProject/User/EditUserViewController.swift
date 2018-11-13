@@ -61,14 +61,14 @@ class EditUserViewController: UIViewController {
     }
     
     func validationForm(completion: (_ success: Bool) -> Void) {
-        guard let name = txtName.text, txtName.text?.count != 0 else {
+        guard let _ = txtName.text, txtName.text?.count != 0 else {
             self.alertMessage.alertMessage(message: "Please, enter your Name")
             self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
             completion(false)
             return
         }
         
-        guard let contactNumber = txtContactNumber.text, txtContactNumber.text?.count != 0 else {
+        guard let _ = txtContactNumber.text, txtContactNumber.text?.count != 0 else {
             self.alertMessage.alertMessage(message: "Please, enter a contact number")
             self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
             completion(false)
@@ -82,7 +82,7 @@ class EditUserViewController: UIViewController {
             completion(false)
         }
         
-        guard let carPlateNumber = txtCarPlateNumber.text, txtCarPlateNumber.text?.count != 0 else {
+        guard let _ = txtCarPlateNumber.text, txtCarPlateNumber.text?.count != 0 else {
             self.alertMessage.alertMessage(message: "Please, enter a car plate number")
             self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
             completion(false)
@@ -93,13 +93,13 @@ class EditUserViewController: UIViewController {
         // validation only if the password was modified
         if let password = txtPassword.text, txtPassword.text?.count != 0 {
             
-            if validatePassword(pw: txtPassword.text!) == false {
+            if validatePassword(pw: password) == false {
                 self.alertMessage.alertMessage(message: "The password must be 6 characters long or more.")
                 self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
                 completion(false)
             }
             
-            if confirmPassword(pw: txtPassword.text!, pw2: txtConfirmPassword.text!) == false {
+            if confirmPassword(pw: password, pw2: txtConfirmPassword.text!) == false {
                 self.alertMessage.alertMessage(message: "The repeated password doesn't match")
                 self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
                 completion(false)
@@ -138,19 +138,23 @@ class EditUserViewController: UIViewController {
         ref.updateChildValues(childUpdates)
         
         if txtPassword.text != "" {
-            changePassword(newPassword: txtPassword.text!)
+            changePassword()
         }
         
         self.alertMessage.successMessage(message: "User data updated successfully!")
         self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
     }
     
-    func changePassword(newPassword: String) {
-        let currentUser = Auth.auth().currentUser
-        currentUser?.updatePassword(to: newPassword)
+    func changePassword() {
         
-        self.alertMessage.successMessage(message: "User data and Password updated successfully!")
-        self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
+        let user = Auth.auth().currentUser
+        user?.updatePassword(to: txtPassword.text!) { error in
+            if let error = error {
+                self.alertMessage.alertMessage(message: error.localizedDescription)
+                self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
+            }
+        }
+
     }
 
 }
