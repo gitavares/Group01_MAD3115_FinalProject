@@ -11,8 +11,9 @@ import Firebase
 
 class EditUserViewController: UIViewController {
 
+    var alertMessage = UIApplication.shared.delegate as! AppDelegate
     var ref: DatabaseReference!
-    var refHandle: DatabaseHandle!
+//    var refHandle: DatabaseHandle!
     
     
     
@@ -46,48 +47,114 @@ class EditUserViewController: UIViewController {
         })
         
         self.txtEmail.text = "\(email)"
-        
-//        refHandle = ref.child("users/profile/\(uid)").observe(.childAdded, with: {
-//            (data) in
-//        })
-        
-        
-//        let userID = Auth.auth().currentUser?.uid
-//        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-//            // Get user value
-//            let value = snapshot.value as? NSDictionary
-//            let username = value?["username"] as? String ?? ""
-//            let user = User(username: username)
-//
-//            // ...
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
-
-        
-        
-        
         self.txtEmail.isEnabled = false
-        
-        
         
     }
     
     
     @IBAction func btnEditUser(_ sender: UIButton) {
-        
-        
+        validationForm { (success) -> Void in
+            if success {
+                saveUser()
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func validationForm(completion: (_ success: Bool) -> Void) {
+        guard let _ = txtName.text, txtName.text?.count != 0 else {
+            self.alertMessage.alertMessage(message: "Please, enter your Name")
+            self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
+            completion(false)
+            return
+        }
+        
+        guard let _ = txtContactNumber.text, txtContactNumber.text?.count != 0 else {
+            self.alertMessage.alertMessage(message: "Please, enter a contact number")
+            self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
+            completion(false)
+            
+            return
+        }
+        
+        if validateContactNumber(contacNumber: txtContactNumber.text!) == false {
+            self.alertMessage.alertMessage(message: "Please, enter a valid contact number")
+            self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
+            completion(false)
+        }
+        
+        guard let _ = txtCarPlateNumber.text, txtCarPlateNumber.text?.count != 0 else {
+            self.alertMessage.alertMessage(message: "Please, enter a car plate number")
+            self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
+            completion(false)
+            
+            return
+        }
+        
+        // validation only if the password was modified
+        if let password = txtPassword.text, txtPassword.text?.count != 0 {
+            
+            if validatePassword(pw: password) == false {
+                self.alertMessage.alertMessage(message: "The password must be 6 characters long or more.")
+                self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
+                completion(false)
+            }
+            
+            if confirmPassword(pw: password, pw2: txtConfirmPassword.text!) == false {
+                self.alertMessage.alertMessage(message: "The repeated password doesn't match")
+                self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
+                completion(false)
+            }
+            
+        }
+        
+        completion(true)
     }
-    */
+    
+    func validatePassword(pw: String) -> Bool {
+        if pw.count < 6 {
+            return false
+        }
+        return true
+    }
+    
+    func confirmPassword(pw: String, pw2: String) -> Bool {
+        return pw2.elementsEqual(pw)
+    }
+    
+    func validateContactNumber(contacNumber: String) -> Bool {
+        let onlyNumberRegex = "^[0-9]*$"
+        return NSPredicate(format: "SELF MATCHES %@", onlyNumberRegex).evaluate(with: contacNumber)
+    }
+    
+    func saveUser() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        let userData = ["uid": uid,
+                    "name": txtName.text!,
+                    "contactNumber": txtContactNumber.text!,
+                    "carPlateNumber": txtCarPlateNumber.text!,
+                    "lastLogin": Date().currentDateTime]
+        let childUpdates = ["users/profile/\(uid)": userData]
+        ref.updateChildValues(childUpdates)
+        
+        if txtPassword.text != "" {
+            changePassword()
+        }
+        
+        self.alertMessage.successMessage(message: "User data updated successfully!")
+        self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
+    }
+    
+    func changePassword() {
+        
+        let user = Auth.auth().currentUser
+        user?.updatePassword(to: txtPassword.text!) { error in
+            if let error = error {
+                self.alertMessage.alertMessage(message: error.localizedDescription)
+                self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
+            }
+        }
+
+    }
 
 }
