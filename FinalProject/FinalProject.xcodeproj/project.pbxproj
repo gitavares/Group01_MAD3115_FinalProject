@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C294EC2219B43FF0027042B /* ParkingLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C294EC1219B43FF0027042B /* ParkingLocationViewController.swift */; };
 		3C294EC7219B69670027042B /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C294EC6219B69670027042B /* ContactViewController.swift */; };
+		3C294ECC219B701A0027042B /* ParkingReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C294ECB219B701A0027042B /* ParkingReportTableViewController.swift */; };
 		3C3AC877218CC9E00099B741 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3AC876218CC9E00099B741 /* LoginViewController.swift */; };
 		3C3AC879218CF90E0099B741 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3AC878218CF90E0099B741 /* RegisterViewController.swift */; };
 		3C3AC8AC218D580E0099B741 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C3AC8AB218D580E0099B741 /* GoogleService-Info.plist */; };
@@ -39,6 +40,7 @@
 		18AE7259AED7F2FB6E03A25A /* Pods-FinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.release.xcconfig"; sourceTree = "<group>"; };
 		3C294EC1219B43FF0027042B /* ParkingLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLocationViewController.swift; sourceTree = "<group>"; };
 		3C294EC6219B69670027042B /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		3C294ECB219B701A0027042B /* ParkingReportTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingReportTableViewController.swift; sourceTree = "<group>"; };
 		3C3AC876218CC9E00099B741 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3C3AC878218CF90E0099B741 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3C3AC8AB218D580E0099B741 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 			path = Contact;
 			sourceTree = "<group>";
 		};
+		3C294EC8219B6D2F0027042B /* ParkingReport */ = {
+			isa = PBXGroup;
+			children = (
+				3C294ECB219B701A0027042B /* ParkingReportTableViewController.swift */,
+			);
+			path = ParkingReport;
+			sourceTree = "<group>";
+		};
 		3C4AA092218C9097006DE138 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 		3C4AA09D218C9098006DE138 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				3C294EC8219B6D2F0027042B /* ParkingReport */,
 				3C294EC5219B69480027042B /* Contact */,
 				3C294EC0219B43C00027042B /* ParkingLocation */,
 				3C69724F219652C000DF9C23 /* Menu */,
@@ -353,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C294ECC219B701A0027042B /* ParkingReportTableViewController.swift in Sources */,
 				3C294EC2219B43FF0027042B /* ParkingLocationViewController.swift in Sources */,
 				3C3AC877218CC9E00099B741 /* LoginViewController.swift in Sources */,
 				3C4AA0A1218C9098006DE138 /* LauncherViewController.swift in Sources */,

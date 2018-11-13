@@ -1,87 +1,38 @@
 //
-//  MenuTableTableViewController.swift
+//  ParkingReportTableViewController.swift
 //  FinalProject
 //
-//  Created by Gurjeet kaur on 2018-11-06.
+//  Created by Giselle Tavares on 13/11/18.
 //  Copyright © 2018 Giselle Tavares. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class MenuTableTableViewController: UITableViewController {
+class ParkingReportTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let user = Auth.auth().currentUser {
-            // do something
-        } else {
-            backToLogin()
-        }
-        
+        navigationItem.title = "Report"
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    // MARK: - Table view data source
+
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        // #warning Incomplete implementation, return the number of sections
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return section == 0 ? 4 : 3
-        return 4
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView.indexPathForSelectedRow?.section == 0 {
-            switch indexPath.row {
-            case 0:
-                print("Home")
-            case 1:
-                print("Add Ticket")
-            case 2:
-                report()
-            case 3:
-                location()
-            default:
-                print("none")
-            }
-        } else if tableView.indexPathForSelectedRow?.section == 1 {
-            switch indexPath.row {
-                case 0:
-                    editProfile()
-                case 1:
-                    print("Instructions")
-                case 2:
-                    contact()
-                case 3:
-                    try! Auth.auth().signOut()
-                    backToLogin()
-                default:
-                    print("none")
-            }
-        }
-    }
-    
-    func backToLogin() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let loginVC = sb.instantiateViewController(withIdentifier: "loginVC")
-        self.present(loginVC, animated: true, completion: nil)
-    }
-    
-    func editProfile() {
-        self.performSegue(withIdentifier: "editUserVC", sender: self)
-    }
-    
-    func location() {
-        self.performSegue(withIdentifier: "locationVC", sender: self)
-    }
-    
-    func contact() {
-        self.performSegue(withIdentifier: "contactVC", sender: self)
-    }
-    
-    func report() {
-        self.performSegue(withIdentifier: "reportVC", sender: self)
+        // #warning Incomplete implementation, return the number of rows
+        return 3
     }
 
     /*
