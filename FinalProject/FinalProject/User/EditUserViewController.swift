@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class EditUserViewController: UIViewController {
+class EditUserViewController: UIViewController, UITextFieldDelegate {
 
     var alertMessage = UIApplication.shared.delegate as! AppDelegate
     var ref: DatabaseReference!
@@ -31,6 +31,14 @@ class EditUserViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Profile"
+        
+        txtName.delegate = self
+        txtPassword.delegate = self
+        txtConfirmPassword.delegate = self
+        txtContactNumber.delegate = self
+        txtCarPlateNumber.delegate = self
+        
+        self.hideKeyboard()
         
         guard let uid = Auth.auth().currentUser?.uid else { return }
         guard let email = Auth.auth().currentUser?.email else { return }
@@ -56,6 +64,7 @@ class EditUserViewController: UIViewController {
     
     
     @IBAction func btnEditUser(_ sender: UIButton) {
+        hideKeyboardOnReturn()
         validationForm { (success) -> Void in
             if success {
                 saveUser()
@@ -157,6 +166,19 @@ class EditUserViewController: UIViewController {
             }
         }
 
+    }
+    
+    func hideKeyboardOnReturn(){
+        txtName.resignFirstResponder()
+        txtPassword.resignFirstResponder()
+        txtConfirmPassword.resignFirstResponder()
+        txtContactNumber.resignFirstResponder()
+        txtCarPlateNumber.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboardOnReturn()
+        return true
     }
 
 }
