@@ -10,8 +10,9 @@ import UIKit
 import Firebase
 
 class RegisterViewController: UIViewController {
-
     
+    var alertMessage = UIApplication.shared.delegate as! AppDelegate
+
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
@@ -19,29 +20,11 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var txtContactNumber: UITextField!
     @IBOutlet weak var txtCarPlateNumber: UITextField!
     
-    @IBOutlet weak var lblValidationName: UILabel!
-    @IBOutlet weak var lblValidationEmail: UILabel!
-    @IBOutlet weak var lblValidationPassword: UILabel!
-    @IBOutlet weak var lblValidationContact: UILabel!
-    @IBOutlet weak var lblValidationCarPlate: UILabel!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.lblValidationName.isHidden = true
-        self.lblValidationEmail.isHidden = true
-        self.lblValidationPassword.isHidden = true
-        self.lblValidationContact.isHidden = true
-        self.lblValidationCarPlate.isHidden = true
     }
     
     @IBAction func btnRegisterUser(_ sender: UIButton) {
-        self.lblValidationName.isHidden = true
-        self.lblValidationEmail.isHidden = true
-        self.lblValidationPassword.isHidden = true
-        self.lblValidationContact.isHidden = true
-        self.lblValidationCarPlate.isHidden = true
-        
         validationForm { (success) -> Void in
             if success {
                 registerUser()
@@ -51,61 +34,64 @@ class RegisterViewController: UIViewController {
     
     func validationForm(completion: (_ success: Bool) -> Void) {
         guard let name = txtName.text, txtName.text?.count != 0 else {
-            self.lblValidationName.isHidden = false
-            self.lblValidationName.text = "Please, enter your Name"
+            self.alertMessage.alertMessage(message: "Please, enter your Name")
+            self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
             completion(false)
             return
         }
         
         guard let email = txtEmail.text, txtEmail.text?.count != 0 else {
-            self.lblValidationEmail.isHidden = false
-            self.lblValidationEmail.text = "Please, enter your Email"
+            self.alertMessage.alertMessage(message: "Please, enter your Email")
+            self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
             completion(false)
             return
         }
         
         if validateEmail(email: txtEmail.text!) == false {
-            self.lblValidationEmail.isHidden = false
-            self.lblValidationEmail.text = "Please, enter a valid Email"
+            self.alertMessage.alertMessage(message: "Please, enter a valid Email")
+            self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
             completion(false)
         }
         
         guard let password = txtPassword.text, txtPassword.text?.count != 0 else {
-            self.lblValidationPassword.isHidden = false
-            self.lblValidationPassword.text = "Please, enter a password"
+            self.alertMessage.alertMessage(message: "Please, enter a password")
+            self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
             completion(false)
+            
             return
         }
         
         if validatePassword(pw: txtPassword.text!) == false {
-            self.lblValidationPassword.isHidden = false
-            self.lblValidationPassword.text = "The password must be 6 characters long or more."
+            self.alertMessage.alertMessage(message: "The password must be 6 characters long or more.")
+            self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
             completion(false)
         }
         
         if confirmPassword(pw: txtPassword.text!, pw2: txtConfirmPassword.text!) == false {
-            self.lblValidationPassword.isHidden = false
-            self.lblValidationPassword.text = "The repeated password doesn't match"
+            self.alertMessage.alertMessage(message: "The repeated password doesn't match")
+            self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
             completion(false)
         }
         
         guard let contactNumber = txtContactNumber.text, txtContactNumber.text?.count != 0 else {
-            self.lblValidationContact.isHidden = false
-            self.lblValidationContact.text = "Please, enter a contact number"
+            self.alertMessage.alertMessage(message: "Please, enter a contact number")
+            self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
             completion(false)
+            
             return
         }
         
         if validateContactNumber(contacNumber: txtContactNumber.text!) == false {
-            self.lblValidationContact.isHidden = false
-            self.lblValidationContact.text = "Please, enter a valid contact number"
+            self.alertMessage.alertMessage(message: "Please, enter a valid contact number")
+            self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
             completion(false)
         }
         
         guard let carPlateNumber = txtCarPlateNumber.text, txtCarPlateNumber.text?.count != 0 else {
-            self.lblValidationCarPlate.isHidden = false
-            self.lblValidationCarPlate.text = "Please, enter a car plate number"
+            self.alertMessage.alertMessage(message: "Please, enter a car plate number")
+            self.present((self.alertMessage.alert ?? nil)!, animated: true, completion: nil)
             completion(false)
+            
             return
         }
         
@@ -151,8 +137,8 @@ class RegisterViewController: UIViewController {
                         ) { success in
                             if success {
                                 let sb = UIStoryboard(name: "Main", bundle: nil)
-                                let testVC = sb.instantiateViewController(withIdentifier: "testVC")
-                                self.present(testVC, animated: true, completion: nil)
+                                let navMenuVC = sb.instantiateViewController(withIdentifier: "navMenuVC")
+                                self.present(navMenuVC, animated: true, completion: nil)
                             }
                         }
                     } else {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C294EC2219B43FF0027042B /* ParkingLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C294EC1219B43FF0027042B /* ParkingLocationViewController.swift */; };
+		3C294EC7219B69670027042B /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C294EC6219B69670027042B /* ContactViewController.swift */; };
 		3C3AC877218CC9E00099B741 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3AC876218CC9E00099B741 /* LoginViewController.swift */; };
 		3C3AC879218CF90E0099B741 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3AC878218CF90E0099B741 /* RegisterViewController.swift */; };
 		3C3AC8AC218D580E0099B741 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C3AC8AB218D580E0099B741 /* GoogleService-Info.plist */; };
@@ -17,6 +19,10 @@
 		3C4AA0A9218C909D006DE138 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4AA0A7218C909D006DE138 /* LaunchScreen.storyboard */; };
 		3C6993CF2190D70900BEA7C9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6993CE2190D70900BEA7C9 /* Utils.swift */; };
 		3C7BC4E1218E3CFF001E15C2 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7BC4E0218E3CFF001E15C2 /* TestViewController.swift */; };
+		3CC9AE562199F07000BD2E75 /* EditUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9AE552199F07000BD2E75 /* EditUserViewController.swift */; };
+		3CC9AE582199F1DE00BD2E75 /* giselle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9AE572199F1DE00BD2E75 /* giselle.jpg */; };
+		3CC9AE63219A083500BD2E75 /* outline_mail_outline_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9AE61219A083400BD2E75 /* outline_mail_outline_black_24dp.png */; };
+		3CC9AE64219A083500BD2E75 /* outline_contact_support_black_24dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9AE62219A083400BD2E75 /* outline_contact_support_black_24dp.png */; };
 		BE42802D94B29D6B10FCF298 /* Pods_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B94397762FE5AC271FA787 /* Pods_FinalProject.framework */; };
 		C88F9D4C2192646C00D9EF81 /* MenuTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9D4B2192646C00D9EF81 /* MenuTableTableViewController.swift */; };
 		C88F9D5E2192756F00D9EF81 /* outline_home_black_24pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C88F9D562192756E00D9EF81 /* outline_home_black_24pt_2x.png */; };
@@ -31,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		18AE7259AED7F2FB6E03A25A /* Pods-FinalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.release.xcconfig"; sourceTree = "<group>"; };
+		3C294EC1219B43FF0027042B /* ParkingLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingLocationViewController.swift; sourceTree = "<group>"; };
+		3C294EC6219B69670027042B /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		3C3AC876218CC9E00099B741 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3C3AC878218CF90E0099B741 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		3C3AC8AB218D580E0099B741 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -43,6 +51,10 @@
 		3C4AA0AA218C909D006DE138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C6993CE2190D70900BEA7C9 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		3C7BC4E0218E3CFF001E15C2 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		3CC9AE552199F07000BD2E75 /* EditUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserViewController.swift; sourceTree = "<group>"; };
+		3CC9AE572199F1DE00BD2E75 /* giselle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = giselle.jpg; sourceTree = "<group>"; };
+		3CC9AE61219A083400BD2E75 /* outline_mail_outline_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline_mail_outline_black_24dp.png; sourceTree = "<group>"; };
+		3CC9AE62219A083400BD2E75 /* outline_contact_support_black_24dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline_contact_support_black_24dp.png; sourceTree = "<group>"; };
 		C4B94397762FE5AC271FA787 /* Pods_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88F9D4B2192646C00D9EF81 /* MenuTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableTableViewController.swift; sourceTree = "<group>"; };
 		C88F9D562192756E00D9EF81 /* outline_home_black_24pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline_home_black_24pt_2x.png; sourceTree = "<group>"; };
@@ -68,6 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C294EC0219B43C00027042B /* ParkingLocation */ = {
+			isa = PBXGroup;
+			children = (
+				3C294EC1219B43FF0027042B /* ParkingLocationViewController.swift */,
+			);
+			path = ParkingLocation;
+			sourceTree = "<group>";
+		};
+		3C294EC5219B69480027042B /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				3C294EC6219B69670027042B /* ContactViewController.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
 		3C4AA092218C9097006DE138 = {
 			isa = PBXGroup;
 			children = (
@@ -89,19 +117,29 @@
 		3C4AA09D218C9098006DE138 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				3C294EC5219B69480027042B /* Contact */,
+				3C294EC0219B43C00027042B /* ParkingLocation */,
+				3C69724F219652C000DF9C23 /* Menu */,
 				C88F9D552192756200D9EF81 /* Images */,
 				3C6993CD2190D6EE00BEA7C9 /* Utils */,
 				3CC0190D218E0888007DDB3C /* User */,
 				3C4AA09E218C9098006DE138 /* AppDelegate.swift */,
 				3C4AA0A0218C9098006DE138 /* LauncherViewController.swift */,
 				3C4AA0A2218C9098006DE138 /* Main.storyboard */,
-				C88F9D4B2192646C00D9EF81 /* MenuTableTableViewController.swift */,
 				3C4AA0A5218C909D006DE138 /* Assets.xcassets */,
 				3C4AA0A7218C909D006DE138 /* LaunchScreen.storyboard */,
 				3C4AA0AA218C909D006DE138 /* Info.plist */,
 				3C3AC8AB218D580E0099B741 /* GoogleService-Info.plist */,
 			);
 			path = FinalProject;
+			sourceTree = "<group>";
+		};
+		3C69724F219652C000DF9C23 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C88F9D4B2192646C00D9EF81 /* MenuTableTableViewController.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		3C6993CD2190D6EE00BEA7C9 /* Utils */ = {
@@ -118,6 +156,7 @@
 				3C3AC876218CC9E00099B741 /* LoginViewController.swift */,
 				3C3AC878218CF90E0099B741 /* RegisterViewController.swift */,
 				3C7BC4E0218E3CFF001E15C2 /* TestViewController.swift */,
+				3CC9AE552199F07000BD2E75 /* EditUserViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -134,6 +173,9 @@
 		C88F9D552192756200D9EF81 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3CC9AE62219A083400BD2E75 /* outline_contact_support_black_24dp.png */,
+				3CC9AE61219A083400BD2E75 /* outline_mail_outline_black_24dp.png */,
+				3CC9AE572199F1DE00BD2E75 /* giselle.jpg */,
 				C88F9D592192756E00D9EF81 /* outline_assessment_black_24pt_2x.png */,
 				C88F9D582192756E00D9EF81 /* outline_credit_card_black_24pt_2x.png */,
 				C88F9D572192756E00D9EF81 /* outline_exit_to_app_black_24pt_2x.png */,
@@ -218,6 +260,7 @@
 				3C4AA0A9218C909D006DE138 /* LaunchScreen.storyboard in Resources */,
 				C88F9D602192756F00D9EF81 /* outline_credit_card_black_24pt_2x.png in Resources */,
 				C88F9D642192756F00D9EF81 /* outline_location_on_black_24pt_2x.png in Resources */,
+				3CC9AE582199F1DE00BD2E75 /* giselle.jpg in Resources */,
 				3C3AC8AC218D580E0099B741 /* GoogleService-Info.plist in Resources */,
 				3C4AA0A6218C909D006DE138 /* Assets.xcassets in Resources */,
 				C88F9D5F2192756F00D9EF81 /* outline_exit_to_app_black_24pt_2x.png in Resources */,
@@ -225,6 +268,8 @@
 				3C4AA0A4218C9098006DE138 /* Main.storyboard in Resources */,
 				C88F9D5E2192756F00D9EF81 /* outline_home_black_24pt_2x.png in Resources */,
 				C88F9D632192756F00D9EF81 /* outline_receipt_black_24pt_2x.png in Resources */,
+				3CC9AE64219A083500BD2E75 /* outline_contact_support_black_24dp.png in Resources */,
+				3CC9AE63219A083500BD2E75 /* outline_mail_outline_black_24dp.png in Resources */,
 				C88F9D612192756F00D9EF81 /* outline_assessment_black_24pt_2x.png in Resources */,
 				C88F9D652192756F00D9EF81 /* outline_time_to_leave_black_24pt_2x.png in Resources */,
 			);
@@ -308,13 +353,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C294EC2219B43FF0027042B /* ParkingLocationViewController.swift in Sources */,
 				3C3AC877218CC9E00099B741 /* LoginViewController.swift in Sources */,
 				3C4AA0A1218C9098006DE138 /* LauncherViewController.swift in Sources */,
 				3C4AA09F218C9098006DE138 /* AppDelegate.swift in Sources */,
+				3CC9AE562199F07000BD2E75 /* EditUserViewController.swift in Sources */,
 				3C7BC4E1218E3CFF001E15C2 /* TestViewController.swift in Sources */,
 				C88F9D4C2192646C00D9EF81 /* MenuTableTableViewController.swift in Sources */,
 				3C3AC879218CF90E0099B741 /* RegisterViewController.swift in Sources */,
 				3C6993CF2190D70900BEA7C9 /* Utils.swift in Sources */,
+				3C294EC7219B69670027042B /* ContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +510,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8FGQUSGK88;
+				DEVELOPMENT_TEAM = 9YGPLVL77V;
 				INFOPLIST_FILE = FinalProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -481,7 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8FGQUSGK88;
+				DEVELOPMENT_TEAM = 9YGPLVL77V;
 				INFOPLIST_FILE = FinalProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
