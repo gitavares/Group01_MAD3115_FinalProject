@@ -34,7 +34,7 @@ class ContactViewController: UIViewController, MFMailComposeViewControllerDelega
         if MFMailComposeViewController.canSendMail() {
             let picker = MFMailComposeViewController()
             picker.mailComposeDelegate = self
-            picker.setToRecipients(["parkinglot@parkinglot.ca", "gitavares@gmail.com"])
+            picker.setToRecipients(["parkinglot@parkinglot.ca"])
             picker.setSubject("Contact by Parking Lot App")
             picker.setMessageBody("Hi", isHTML: true)
 
@@ -45,8 +45,17 @@ class ContactViewController: UIViewController, MFMailComposeViewControllerDelega
     }
     
     // MFMailComposeViewControllerDelegate
-    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-        
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        switch result {
+            case .cancelled:
+                print("Mail cancelled");
+            case .saved:
+                print("Mail saved");
+            case .sent:
+                print("Mail sent");
+            case .failed:
+                print("Mail sent failure: %@", error?.localizedDescription);
+        }
         dismiss(animated: true, completion: nil)
     }
     
