@@ -115,7 +115,6 @@
                     </view>
                     <connections>
                         <outlet property="txtEmail" destination="kkb-ss-AgB" id="lnP-zm-XLR"/>
-                        <outlet property="txtPassword" destination="mUa-dR-YmT" id="bSm-48-mgt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLF-zl-v83" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -539,6 +538,6 @@
         <image name="outline_receipt_black_24pt_2x.png" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m59-mF-nHc"/>
+        <segue reference="3Wm-PQ-cTd"/>
     </inferredMetricsTieBreakers>
 </document>
