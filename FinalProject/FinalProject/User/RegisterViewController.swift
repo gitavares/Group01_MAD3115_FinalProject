@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     var alertMessage = UIApplication.shared.delegate as! AppDelegate
 
@@ -22,9 +22,20 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        txtName.delegate = self
+        txtEmail.delegate = self
+        txtPassword.delegate = self
+        txtConfirmPassword.delegate = self
+        txtContactNumber.delegate = self
+        txtCarPlateNumber.delegate = self
+        
+        self.hideKeyboard()
+        
     }
     
     @IBAction func btnRegisterUser(_ sender: UIButton) {
+        hideKeyboardOnReturn()
         validationForm { (success) -> Void in
             if success {
                 registerUser()
@@ -168,6 +179,20 @@ class RegisterViewController: UIViewController {
             completion(error == nil)
         }
         
+    }
+    
+    func hideKeyboardOnReturn() {
+        txtName.resignFirstResponder()
+        txtEmail.resignFirstResponder()
+        txtPassword.resignFirstResponder()
+        txtConfirmPassword.resignFirstResponder()
+        txtContactNumber.resignFirstResponder()
+        txtCarPlateNumber.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboardOnReturn()
+        return true
     }
 
 }
