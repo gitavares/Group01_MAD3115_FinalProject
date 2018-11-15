@@ -37,7 +37,7 @@ class MenuTableTableViewController: UITableViewController {
             case 0:
                 print("Home")
             case 1:
-                print("Add Ticket")
+                ticket()
             case 2:
                 print("Report")
             case 3:
@@ -79,6 +79,10 @@ class MenuTableTableViewController: UITableViewController {
     func contact() {
         self.performSegue(withIdentifier: "contactVC", sender: self)
     }
+    func ticket() {
+        self.performSegue(withIdentifier: "ticketVC", sender: self)
+    }
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

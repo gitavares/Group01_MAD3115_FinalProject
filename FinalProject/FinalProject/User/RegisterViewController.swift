@@ -164,22 +164,6 @@ class RegisterViewController: UIViewController {
             "lastLogin": lastLogin
         ] as [String:Any]
         
-        //     let id = Int.random(in: 0 ... 1000000) // implemented
-        //        let databaseRef = Database.database().reference().child("users/profile/\(uid)/tickets/\(id)")
-        //        let ticketObject = [
-        //            "carPlate": carPlate,
-        //            "carMake": carMake,
-        //            "color": color,
-        //            "timing": timing,
-        //            "lot": lot,
-        //            "spot": spot,
-        //            "paymentMethod": paymentMethod,
-        //            "date": Date().currentDateTime,
-        //            ] as [String:Any]
-        //        databaseRef.setValue(ticketObject) { error, ref in
-        //            completion(error == nil)
-        //        }
-        
         databaseRef.setValue(userObject) { error, ref in
             completion(error == nil)
         }

@@ -23,6 +23,9 @@ class LoginViewController: UIViewController {
         
         ref = Database.database().reference()
         
+        txtEmail.text = "gitavares@hotmail.com"
+        txtPassword.text = "654321"
+        
 //        GIDSignIn.sharedInstance().uiDelegate = self as? GIDSignInUIDelegate
 //        GIDSignIn.sharedInstance().signInSilently()
         
