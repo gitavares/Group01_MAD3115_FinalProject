@@ -50,7 +50,7 @@ class MenuTableTableViewController: UITableViewController {
                 case 0:
                     editProfile()
                 case 1:
-                    print("Instructions")
+                    instructions()
                 case 2:
                     contact()
                 case 3:
@@ -78,6 +78,10 @@ class MenuTableTableViewController: UITableViewController {
     
     func contact() {
         self.performSegue(withIdentifier: "contactVC", sender: self)
+    }
+    
+    func instructions() {
+        self.performSegue(withIdentifier: "instructionVC", sender: self)
     }
 
     /*
