@@ -34,6 +34,7 @@
 		C88F9D642192756F00D9EF81 /* outline_location_on_black_24pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C88F9D5C2192756E00D9EF81 /* outline_location_on_black_24pt_2x.png */; };
 		C88F9D652192756F00D9EF81 /* outline_time_to_leave_black_24pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C88F9D5D2192756E00D9EF81 /* outline_time_to_leave_black_24pt_2x.png */; };
 		D49DD7BF219BACC80002768C /* AddTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49DD7BE219BACC80002768C /* AddTicketViewController.swift */; };
+		D4DA47EE219E44B70001750B /* Ticket.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4DA47EC219E44B70001750B /* Ticket.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		C88F9D5C2192756E00D9EF81 /* outline_location_on_black_24pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline_location_on_black_24pt_2x.png; sourceTree = "<group>"; };
 		C88F9D5D2192756E00D9EF81 /* outline_time_to_leave_black_24pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline_time_to_leave_black_24pt_2x.png; sourceTree = "<group>"; };
 		D49DD7BE219BACC80002768C /* AddTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewController.swift; sourceTree = "<group>"; };
+		D4DA47ED219E44B70001750B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = FinalProject/Base.lproj/Ticket.plist; sourceTree = SOURCE_ROOT; };
 		E520C59698691F60939E379B /* Pods-FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 			children = (
 				C88F9D4B2192646C00D9EF81 /* MenuTableTableViewController.swift */,
 				D49DD7BE219BACC80002768C /* AddTicketViewController.swift */,
+				D4DA47EC219E44B70001750B /* Ticket.plist */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				C88F9D622192756F00D9EF81 /* outline_person_black_24pt_2x.png in Resources */,
 				3C4AA0A4218C9098006DE138 /* Main.storyboard in Resources */,
 				C88F9D5E2192756F00D9EF81 /* outline_home_black_24pt_2x.png in Resources */,
+				D4DA47EE219E44B70001750B /* Ticket.plist in Resources */,
 				C88F9D632192756F00D9EF81 /* outline_receipt_black_24pt_2x.png in Resources */,
 				3CC9AE64219A083500BD2E75 /* outline_contact_support_black_24dp.png in Resources */,
 				3CC9AE63219A083500BD2E75 /* outline_mail_outline_black_24dp.png in Resources */,
@@ -387,6 +391,14 @@
 				3C4AA0A8218C909D006DE138 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D4DA47EC219E44B70001750B /* Ticket.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4DA47ED219E44B70001750B /* Base */,
+			);
+			name = Ticket.plist;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

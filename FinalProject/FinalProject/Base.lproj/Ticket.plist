@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Colors</key>
+	<array>
+		<string>Black</string>
+		<string>Blue</string>
+		<string>Brown</string>
+		<string>Golden</string>
+		<string>Golden-Brown</string>
+		<string>Green</string>
+		<string>Grey</string>
+		<string>Red</string>
+		<string>Silver</string>
+		<string>White</string>
+	</array>
+	<key>Makes</key>
+	<array>
+		<string>Acura</string>
+		<string>Alfaromeo</string>
+		<string>Audi</string>
+		<string>Bentley</string>
+		<string>Bmw</string>
+		<string>Bugatti</string>
+		<string>Buick</string>
+		<string>Cadillac</string>
+		<string>Chevrolet</string>
+		<string>Chrysler</string>
+		<string>Citroen</string>
+		<string>Dodge</string>
+		<string>Ferrari</string>
+		<string>Ford</string>
+		<string>Honda</string>
+		<string>Hyundai</string>
+		<string>Infiniti</string>
+		<string>Jaguar</string>
+		<string>Kia</string>
+		<string>Lamborghini</string>
+		<string>Lexus</string>
+		<string>Maserati</string>
+		<string>Mazda</string>
+		<string>Mercedes</string>
+		<string>Nissan</string>
+		<string>Peugeot</string>
+		<string>Porsche</string>
+		<string>Rollsroyce</string>
+		<string>Tesla</string>
+		<string>Toyota</string>
+	</array>
+	<key>Lot</key>
+	<array>
+		<string>Lane A</string>
+		<string>Lane B</string>
+		<string>Lane C</string>
+		<string>Lane D</string>
+		<string>Lane E</string>
+		<string>Lane F</string>
+	</array>
+	<key>Spot</key>
+	<array>
+		<string>P1</string>
+		<string>P2</string>
+		<string>P3</string>
+		<string>P4</string>
+		<string>P5</string>
+	</array>
+	<key>Timing</key>
+	<array>
+		<integer>0</integer>
+		<integer>1</integer>
+		<real>1.5</real>
+		<integer>2</integer>
+		<real>2.5</real>
+		<integer>3</integer>
+		<integer>24</integer>
+	</array>
+	<key>PaymentMethod</key>
+	<array>
+		<string>Credit Card</string>
+		<string>Cash</string>
+		<string>Debit Card</string>
+	</array>
+</dict>
+</plist>
