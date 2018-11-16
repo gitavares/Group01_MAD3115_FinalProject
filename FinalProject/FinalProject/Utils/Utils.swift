@@ -20,6 +20,13 @@ extension Date {
     }
 }
 
+extension Double
+{
+    func curr() -> String {
+        return "$" + String(format: "%.2f", self)
+    }
+}
+
 //private var __maxLengths = [UITextField: Int]()
 //
 //extension UITextField {

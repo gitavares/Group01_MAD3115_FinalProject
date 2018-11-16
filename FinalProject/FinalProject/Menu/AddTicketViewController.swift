@@ -23,19 +23,24 @@ class AddTicketViewController: UIViewController {
 
     @IBOutlet weak var txtHours: UITextField!
 
-    @IBOutlet weak var txtLocation: UITextField!
+    @IBOutlet weak var txtLot: UITextField!
 
+    @IBOutlet weak var txtSpot: UITextField!
+    
     @IBOutlet weak var txtPaymentMethod: UITextField!
 
     @IBOutlet weak var lblTimeStamp: UILabel!
 
     @IBOutlet weak var lblTotal: UILabel!
+    var multiPicker : UIPickerView!
+    var textField_Edit : UITextField!
     var makes = [String]()
     var colors = [String]()
     var lots = [String]()
     var spots = [String]()
-    var timings = [Double]()
+    var timings = [String]()
     var payments = [String]()
+    var currentData = [String]()
 
 
     override func viewDidLoad() {
@@ -71,7 +76,7 @@ class AddTicketViewController: UIViewController {
                 let timingsList = contents["Timing"] as! [AnyObject]
                 for timing in timingsList
                 {
-                    timings.append(timing as! Double)
+                    timings.append(timing as! String)
                 }
                 let paymentsList = contents["PaymentMethod"] as! [AnyObject]
                 for payment in paymentsList
@@ -82,13 +87,15 @@ class AddTicketViewController: UIViewController {
         }
     }
 
+    
+    
     @IBAction func btnDone(_ sender: UIButton)
     {
         print("CAR PLATE: \(txtPlate.text!)")
         print("CAR BRAND: \(txtBrand.text!)")
         print("CAR COLOR: \(txtColor.text!)")
         print("CAR HOURS: \(txtHours.text!)")
-        print("CAR LOCATION: \(txtLocation.text!)")
+        print("CAR LOCATION: \(txtLot.text!)")
         print("PAYMENT METHOD: \(txtPaymentMethod.text!)")
         print(makes)
         print(colors)
@@ -97,6 +104,8 @@ class AddTicketViewController: UIViewController {
         print(timings)
         print(payments)
         
+//        lblTotal.text = "\(5.0*Double(timings[multiPicker.selectedRow(inComponent: 0)])!)"
+        lblTotal.text = "\((5.0*Double(txtHours.text!)!).curr())"
         
         saveTicket() { success in
             if success {
@@ -130,7 +139,8 @@ class AddTicketViewController: UIViewController {
                             "carMake": txtBrand.text!,
                             "color": txtColor.text!,
                             "timing": txtHours.text!,
-                            "lotSpot": txtLocation.text!,
+                            "lot": txtLot.text!,
+                            "spot": txtSpot.text!,
                             "paymentMethod": txtPaymentMethod.text!,
                             "date": Date().currentDateTime,]
             as [String:Any]
