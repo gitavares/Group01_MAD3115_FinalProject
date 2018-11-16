@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a7R-OI-6io">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -807,6 +807,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a7R-OI-6io" id="BTh-bP-7j5"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vehicle Brand" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="31Z-hJ-5R9">
                                 <rect key="frame" x="239" y="145" width="120" height="30"/>
@@ -814,6 +817,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a7R-OI-6io" id="XYx-9v-vUN"/>
+                                </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="XAS-jg-1P3">
                                 <rect key="frame" x="20" y="110" width="104" height="95"/>
@@ -825,6 +831,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a7R-OI-6io" id="DP0-fJ-Esj"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hours Parked" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2U1-5E-Z9i">
                                 <rect key="frame" x="239" y="216" width="120" height="30"/>
@@ -832,6 +841,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a7R-OI-6io" id="fxx-gC-5uL"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t0g-fW-VAd">
                                 <rect key="frame" x="239" y="251" width="120" height="30"/>
@@ -839,6 +851,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a7R-OI-6io" id="AOz-qN-oaw"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATA-zW-Ufc">
                                 <rect key="frame" x="93" y="537" width="192" height="36"/>
@@ -854,6 +869,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a7R-OI-6io" id="5iU-mQ-Zaw"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Stamp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2X-mr-r9c">
                                 <rect key="frame" x="20" y="359" width="339" height="45"/>
@@ -917,6 +935,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a7R-OI-6io" id="TwV-hd-gxH"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spot" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npm-XG-S2c">
                                 <rect key="frame" x="192" y="291" width="39" height="21"/>
@@ -942,13 +963,13 @@
                         <outlet property="imgBrand" destination="XAS-jg-1P3" id="hnp-v9-NCh"/>
                         <outlet property="lblTimeStamp" destination="W2X-mr-r9c" id="uaH-Qf-FcR"/>
                         <outlet property="lblTotal" destination="ATA-zW-Ufc" id="dBv-ec-xmx"/>
-                        <outlet property="txtBrand" destination="31Z-hJ-5R9" id="SIq-vM-ZrD"/>
-                        <outlet property="txtColor" destination="fAi-L4-go6" id="yIx-hg-HA3"/>
-                        <outlet property="txtHours" destination="2U1-5E-Z9i" id="ao3-Mn-LUl"/>
-                        <outlet property="txtLot" destination="t0g-fW-VAd" id="n9g-T1-MZh"/>
-                        <outlet property="txtPaymentMethod" destination="CkK-Zo-lBZ" id="MJK-An-FFZ"/>
-                        <outlet property="txtPlate" destination="bvJ-6B-QTy" id="tD7-KC-9bd"/>
-                        <outlet property="txtSpot" destination="gdm-lb-ad9" id="dky-0t-aXE"/>
+                        <outlet property="txtColor" destination="fAi-L4-go6" id="xIw-7z-Mpe"/>
+                        <outlet property="txtHours" destination="2U1-5E-Z9i" id="0X7-FH-25f"/>
+                        <outlet property="txtLot" destination="t0g-fW-VAd" id="jnL-Ka-fYs"/>
+                        <outlet property="txtMake" destination="31Z-hJ-5R9" id="yhI-Si-l1X"/>
+                        <outlet property="txtPaymentMethod" destination="CkK-Zo-lBZ" id="csX-rF-ltu"/>
+                        <outlet property="txtPlate" destination="bvJ-6B-QTy" id="Z4r-Lx-jiW"/>
+                        <outlet property="txtSpot" destination="gdm-lb-ad9" id="iVd-gM-ojB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L8e-LC-2ap" userLabel="First Responder" sceneMemberID="firstResponder"/>

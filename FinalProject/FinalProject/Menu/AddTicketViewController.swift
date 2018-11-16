@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AddTicketViewController: UIViewController {
+class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var alertMessage = UIApplication.shared.delegate as! AppDelegate
 
@@ -17,7 +17,7 @@ class AddTicketViewController: UIViewController {
 
     @IBOutlet weak var txtPlate: UITextField!
 
-    @IBOutlet weak var txtBrand: UITextField!
+    @IBOutlet weak var txtMake: UITextField!
 
     @IBOutlet weak var txtColor: UITextField!
 
@@ -47,6 +47,10 @@ class AddTicketViewController: UIViewController {
         super.viewDidLoad()
         lblTimeStamp.text = "\(Date().currentDateTime)"
         self.title = "Add Ticket"
+
+        
+        //FOR TESTS ONLY
+        txtPlate.text = "ABC1234"
         
         //Opening Ticket.plist, containing data to put on the PickerViews:
         if let path = Bundle.main.path(forResource: "Ticket", ofType: "plist")
@@ -87,24 +91,113 @@ class AddTicketViewController: UIViewController {
         }
     }
 
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        if textField == self.txtPlate {
+//            self.textField_Edit = textField
+//            print("***********PLATE**********")
+//            //            activeDataArray = season
+//        }
+//        else
+//        {
+//            print("***********NOT PLATE**********")
+//        }
+//    }
+
+    func textFieldDidBeginEditing(_ textField: UITextField)
+    {
+        if (textField != txtPlate)
+        {
+            self.textField_Edit = textField
+            self.pickData(textField)
+            switch textField
+            {
+            case txtMake:
+                self.currentData = self.makes
+            case txtColor:
+                self.currentData = self.colors
+            case txtHours:
+                self.currentData = self.timings
+            case txtLot:
+                self.currentData = self.lots
+            case txtSpot:
+                self.currentData = self.spots
+            case txtPaymentMethod:
+                self.currentData = self.payments
+            default:
+                return
+            }
+        }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
+    {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        return self.currentData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return currentData[row]
+    }
+    
+    //MARK:- Function of datePicker
+    func pickData(_ textField : UITextField){
+        //Change that
+        self.multiPicker = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
+        self.multiPicker.backgroundColor = UIColor.white
+        multiPicker.delegate = self
+        multiPicker.dataSource = self
+        textField.inputView = self.multiPicker
+        
+        // Adding ToolBar
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.backgroundColor = .cyan
+        toolBar.tintColor = UIColor (red: 1/255, green: 25/255, blue: 147/255, alpha: 1)//Color => Midnight
+        toolBar.sizeToFit()
+        
+        // Adding ToolBar Button
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneClick))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.cancelClick))
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        textField.inputAccessoryView = toolBar
+    }
+    
+    // MARK:- Buttons Done and Cancel Actions
+    @objc func doneClick()
+    {
+        textField_Edit.text = currentData[multiPicker.selectedRow(inComponent: 0)]
+        textField_Edit.resignFirstResponder()
+    }
+    @objc func cancelClick() {
+        textField_Edit.resignFirstResponder()
+    }
     
     
     @IBAction func btnDone(_ sender: UIButton)
     {
-        print("CAR PLATE: \(txtPlate.text!)")
-        print("CAR BRAND: \(txtBrand.text!)")
-        print("CAR COLOR: \(txtColor.text!)")
-        print("CAR HOURS: \(txtHours.text!)")
-        print("CAR LOCATION: \(txtLot.text!)")
-        print("PAYMENT METHOD: \(txtPaymentMethod.text!)")
-        print(makes)
-        print(colors)
-        print(lots)
-        print(spots)
-        print(timings)
-        print(payments)
+        //FOR TESTS ONLY
+//        print("CAR PLATE: \(txtPlate.text!)")
+//        print("CAR MAKE: \(txtMake.text!)")
+//        print("CAR COLOR: \(txtColor.text!)")
+//        print("CAR HOURS: \(txtHours.text!)")
+//        print("CAR LOCATION: \(txtLot.text!)")
+//        print("PAYMENT METHOD: \(txtPaymentMethod.text!)")
+//        print(makes)
+//        print(colors)
+//        print(lots)
+//        print(spots)
+//        print(timings)
+//        print(payments)
         
 //        lblTotal.text = "\(5.0*Double(timings[multiPicker.selectedRow(inComponent: 0)])!)"
+//        FOR TESTS ONLY
         lblTotal.text = "\((5.0*Double(txtHours.text!)!).curr())"
         
         saveTicket() { success in
@@ -136,7 +229,7 @@ class AddTicketViewController: UIViewController {
         
         let databaseRef = Database.database().reference().child("users/profile/\(uid)/tickets/\(id)")
         let ticketObject = ["carPlate": txtPlate.text!,
-                            "carMake": txtBrand.text!,
+                            "carMake": txtMake.text!,
                             "color": txtColor.text!,
                             "timing": txtHours.text!,
                             "lot": txtLot.text!,
@@ -149,19 +242,7 @@ class AddTicketViewController: UIViewController {
         }
         
     }
-
-    func textFieldDidBeginEditing(textField: UITextField) {
-        if textField == self.txtPlate {
-            print("***********PLATE**********")
-    //            activeDataArray = season
-        }
-        else
-        {
-            print("***********NOT PLATE**********")
-        }
-
-    }
-    
+ 
     /*
      // MARK: - Navigation
      
