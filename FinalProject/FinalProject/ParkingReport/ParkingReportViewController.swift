@@ -12,8 +12,10 @@ import UIKit
 class ParkingReportTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
-    @IBOutlet weak var tableReport: UITableView!
     
+    @IBOutlet weak var tabelViewReport: UITableView!
+    
+    @IBOutlet weak var tableViewCellReport: UITableViewCell!
     override func viewDidLoad() {
         super.viewDidLoad()
         
