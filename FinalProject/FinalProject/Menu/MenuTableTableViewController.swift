@@ -39,7 +39,7 @@ class MenuTableTableViewController: UITableViewController {
             case 1:
                 print("Add Ticket")
             case 2:
-                print("Report")
+                report()
             case 3:
                 location()
             default:
@@ -82,6 +82,10 @@ class MenuTableTableViewController: UITableViewController {
     
     func instructions() {
         self.performSegue(withIdentifier: "instructionVC", sender: self)
+    }
+  
+    func report() {
+        self.performSegue(withIdentifier: "reportVC", sender: self)
     }
 
     /*
