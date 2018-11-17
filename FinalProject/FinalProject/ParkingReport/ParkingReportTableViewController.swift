@@ -7,12 +7,28 @@
 //
 
 import UIKit
-//import Firebase
+import Firebase
+
+class reuseIdentifier: UITableViewCell {
+    
+    @IBOutlet weak var lblDateTimeParking: UILabel!
+    @IBOutlet weak var lblTotalAmount: UILabel!
+    @IBOutlet weak var imgCarMake: UIImageView!
+    @IBOutlet weak var lblCarPlate: UILabel!
+    @IBOutlet weak var lblCarMake: UILabel!
+    @IBOutlet weak var lblColor: UILabel!
+    @IBOutlet weak var lblDuration: UILabel!
+    @IBOutlet weak var lblPaymentMethod: UILabel!
+    @IBOutlet weak var lblLotSpot: UILabel!
+    
+}
 
 class ParkingReportTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
     @IBOutlet weak var tableReport: UITableView!
+    var ref: DatabaseReference = Database.database().reference()
+    var tickets = [Tickets]()
+    let uid = Auth.auth().currentUser?.uid
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,36 +36,70 @@ class ParkingReportTableViewController: UIViewController, UITableViewDataSource,
         navigationItem.title = "Report"
         tableReport.delegate = self
         tableReport.dataSource = self
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        loadTickets()
+        
     }
 
+    func loadTickets() {
+        ref.child("users/profile/\(uid!)/tickets").observe(.childAdded, with: { (snapshot) in
+            
+            let results = snapshot.value as? [String : AnyObject]
+            let carMake = results?["carMake"]
+            let carPlate = results?["carPlate"]
+            let color = results?["color"]
+            let date = results?["date"]
+            let lot = results?["lot"]
+            let paymentMethod = results?["paymentMethod"]
+            let spot = results?["spot"]
+            let ticketAmount = results?["ticketAmount"]
+            let timing = results?["timing"]
+            
+            let allTickets = Tickets(carMake: carMake as! String?,
+                                     carPlate: carPlate as! String?,
+                                     color: color as! String?,
+                                     date: date as! String?,
+                                     lot: lot as! String?,
+                                     paymentMethod: paymentMethod as! String?,
+                                     spot: spot as! String?,
+                                     ticketAmount: ticketAmount as! Double?,
+                                     timing: timing as! String?)
+            
+            self.tickets.append(allTickets)
+            
+            DispatchQueue.main.async {
+                self.tableReport.reloadData()
+            }
+        })
+    }
     
 
-     func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        
-        // count how many ticket the current user have
-        return 4
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tickets.count
     }
 
     
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! reuseIdentifier
 
-        // Configure the cell...
-
+        let ticket = tickets[indexPath.row]
+        cell.imgCarMake?.image = UIImage(named: "\(ticket.carMake ?? "")")
+        cell.lblCarMake?.text = "Car make: \(ticket.carMake ?? "")"
+        cell.lblCarPlate?.text = "Car plate: \(ticket.carPlate ?? "")"
+        cell.lblColor?.text = "Color:  \(ticket.color ?? "")"
+        cell.lblDateTimeParking?.text = ticket.date
+        cell.lblDuration?.text = "Duration: \(ticket.timing ?? "") hr(s)"
+        cell.lblLotSpot?.text = "Lot: \(ticket.lot ?? "") | Spot: \(ticket.spot ?? "")"
+        cell.lblPaymentMethod?.text = "Payment method: \(ticket.paymentMethod ?? "")"
+        cell.lblTotalAmount?.text = "$ \(ticket.ticketAmount ?? 0)"
+        
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -57,51 +107,5 @@ class ParkingReportTableViewController: UIViewController, UITableViewDataSource,
         // the height of each cell
         return 180
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
