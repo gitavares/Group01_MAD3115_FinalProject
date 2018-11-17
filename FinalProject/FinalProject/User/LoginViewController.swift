@@ -28,26 +28,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         ref = Database.database().reference()
         
-//        txtEmail.text = "gitavares@hotmail.com"
-//        txtPassword.text = "654321"
-        
-//        GIDSignIn.sharedInstance().uiDelegate = self as? GIDSignInUIDelegate
-//        GIDSignIn.sharedInstance().signInSilently()
-        
-        
-//        handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
-//            if user != nil {
-//                MeasurementHelper.sendLoginEvent()
-//                self.performSegue(withIdentifier: Constants.Segues.SignInToFp, sender: nil)
-//            }
-//        }
     }
     
     @IBAction func btnLogin(_ sender: UIButton) {
         
         Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) { user, error in
             if error == nil && user != nil {
-//                self.dismiss(animated: false, completion: nil)
                 self.saveLastLogin()
                 
                 let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -72,23 +58,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         txtPassword.resignFirstResponder()
         return true
     }
-    
-    
-//    deinit {
-//        if let handle = handle {
-//            Auth.auth().removeStateDidChangeListener(handle)
-//        }
-//    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

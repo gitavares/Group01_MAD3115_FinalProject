@@ -115,6 +115,7 @@
                     </view>
                     <connections>
                         <outlet property="txtEmail" destination="kkb-ss-AgB" id="lnP-zm-XLR"/>
+                        <outlet property="txtPassword" destination="mUa-dR-YmT" id="YsO-oA-Kwh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLF-zl-v83" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -993,6 +994,6 @@
         <image name="outline_time_to_leave_black_24pt_2x.png" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m59-mF-nHc"/>
+        <segue reference="3Wm-PQ-cTd"/>
     </inferredMetricsTieBreakers>
 </document>
