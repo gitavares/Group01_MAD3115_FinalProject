@@ -141,12 +141,11 @@ class EditUserViewController: UIViewController, UITextFieldDelegate {
     func saveUser() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        let userData = ["name": txtName.text!,
-                    "contactNumber": txtContactNumber.text!,
-                    "carPlateNumber": txtCarPlateNumber.text!,
-                    "lastLogin": Date().currentDateTime]
-        let childUpdates = ["users/profile/\(uid)": userData]
-        ref.updateChildValues(childUpdates)
+        let childUpdates = ["name": txtName.text!,
+                            "contactNumber": txtContactNumber.text!,
+                            "carPlateNumber": txtCarPlateNumber.text!,
+                            "lastLogin": Date().currentDateTime]
+        ref.child("users/profile/\(uid)").updateChildValues(childUpdates)
         
         if txtPassword.text != "" {
             changePassword()
