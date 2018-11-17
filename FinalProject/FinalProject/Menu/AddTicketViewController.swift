@@ -40,6 +40,7 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
     var spots = [String]()
     var timings = [String]()
     var payments = [String]()
+    var ticketAmount = Double()
     var currentData = [String]()
 
 
@@ -90,18 +91,6 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
             }
         }
     }
-
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        if textField == self.txtPlate {
-//            self.textField_Edit = textField
-//            print("***********PLATE**********")
-//            //            activeDataArray = season
-//        }
-//        else
-//        {
-//            print("***********NOT PLATE**********")
-//        }
-//    }
 
     func textFieldDidBeginEditing(_ textField: UITextField)
     {
@@ -173,6 +162,10 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
     @objc func doneClick()
     {
         textField_Edit.text = currentData[multiPicker.selectedRow(inComponent: 0)]
+        if (textField_Edit == txtMake)
+        {
+            imgBrand.image = UIImage(named: currentData[multiPicker.selectedRow(inComponent: 0)])
+        }
         textField_Edit.resignFirstResponder()
     }
     @objc func cancelClick() {
@@ -198,7 +191,8 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         
 //        lblTotal.text = "\(5.0*Double(timings[multiPicker.selectedRow(inComponent: 0)])!)"
 //        FOR TESTS ONLY
-        lblTotal.text = "\((5.0*Double(txtHours.text!)!).curr())"
+        ticketAmount = (10.0*Double(txtHours.text!)!)
+        lblTotal.text = "\(ticketAmount.curr())"
         
         saveTicket() { success in
             if success {
@@ -235,7 +229,8 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
                             "lot": txtLot.text!,
                             "spot": txtSpot.text!,
                             "paymentMethod": txtPaymentMethod.text!,
-                            "date": Date().currentDateTime,]
+                            "date": Date().currentDateTime,
+                            "ticketAmount": ticketAmount]
             as [String:Any]
         databaseRef.setValue(ticketObject) { error, ref in
             completion(error == nil)
