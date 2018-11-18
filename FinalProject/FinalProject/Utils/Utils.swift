@@ -18,6 +18,14 @@ extension Date {
 
         return formatter.string(from: currentDateTime)
     }
+    var dateOnlyDate: String {
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        
+        return formatter.string(from: currentDateTime)
+    }
 }
 
 extension Double

@@ -3,7 +3,7 @@
 //  FinalProject
 //
 //  Created by Antonio Merendaz do Carmo Nt on 2018-11-13.
-//  Copyright © 2018 Giselle Tavares. All rights reserved.
+//  Copyright © 2018 Medtouch. All rights reserved.
 //
 
 import UIKit
@@ -42,12 +42,23 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
     var payments = [String]()
     var ticketAmount = Double()
     var currentData = [String]()
-
+    var ticketDetails = [String : String]()
+    var logoImg = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         lblTimeStamp.text = "\(Date().currentDateTime)"
         self.title = "Add Ticket"
+        
+        txtPlate.text! = "ABC1234"
+        txtMake.text! = "Acura"
+        txtColor.text! = "Black"
+        txtHours.text! = "1.0"
+        txtLot.text! = "Lane A"
+        txtSpot.text! = "P1"
+        txtPaymentMethod.text! = "Credit Card"
+        lblTimeStamp.text! = Date().currentDateTime
+        lblTotal.text! = "$ 10.00"
 
         
         //FOR TESTS ONLY
@@ -175,21 +186,6 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
     
     @IBAction func btnDone(_ sender: UIButton)
     {
-        //FOR TESTS ONLY
-//        print("CAR PLATE: \(txtPlate.text!)")
-//        print("CAR MAKE: \(txtMake.text!)")
-//        print("CAR COLOR: \(txtColor.text!)")
-//        print("CAR HOURS: \(txtHours.text!)")
-//        print("CAR LOCATION: \(txtLot.text!)")
-//        print("PAYMENT METHOD: \(txtPaymentMethod.text!)")
-//        print(makes)
-//        print(colors)
-//        print(lots)
-//        print(spots)
-//        print(timings)
-//        print(payments)
-        
-//        lblTotal.text = "\(5.0*Double(timings[multiPicker.selectedRow(inComponent: 0)])!)"
 //        FOR TESTS ONLY
         ticketAmount = (10.0*Double(txtHours.text!)!)
         lblTotal.text = "\(ticketAmount.curr())"
@@ -200,6 +196,7 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
     //                let sb = UIStoryboard(name: "Main", bundle: nil)
     //                let navMenuVC = sb.instantiateViewController(withIdentifier: "navMenuVC")
     //                self.present(navMenuVC, animated: true, completion: nil)
+                self.performSegue(withIdentifier: "toPreviewVC", sender: self)
             } else {
                 print("some error creating the ticket")
             }
@@ -217,12 +214,10 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         
         let id = Int.random(in: 0 ... 1000000) // implemented
         
-        print("ID GENERATED: \(id)")
-        
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
         let databaseRef = Database.database().reference().child("users/profile/\(uid)/tickets/\(id)")
-        let ticketObject = ["carPlate": txtPlate.text!,
+        var ticketObject = ["carPlate": txtPlate.text!,
                             "carMake": txtMake.text!,
                             "color": txtColor.text!,
                             "timing": txtHours.text!,
@@ -235,17 +230,21 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         databaseRef.setValue(ticketObject) { error, ref in
             completion(error == nil)
         }
+        ticketObject["ticketAmount"] = String(ticketAmount)
+        ticketObject["date"] = Date().dateOnlyDate
+        ticketDetails = ticketObject as! [String : String]
+        ticketDetails ["id"] = "\(id)"
+        ticketDetails ["logoImage"] = self.logoImg
         
     }
  
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
+        if let vc = segue.destination as? PreviewViewController
+        {
+            vc.ticketDetails = self.ticketDetails
+        }  
      }
-     */
-    
 }

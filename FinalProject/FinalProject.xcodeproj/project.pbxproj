@@ -33,8 +33,12 @@
 		C88F9D632192756F00D9EF81 /* outline_receipt_black_24pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C88F9D5B2192756E00D9EF81 /* outline_receipt_black_24pt_2x.png */; };
 		C88F9D642192756F00D9EF81 /* outline_location_on_black_24pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C88F9D5C2192756E00D9EF81 /* outline_location_on_black_24pt_2x.png */; };
 		C88F9D652192756F00D9EF81 /* outline_time_to_leave_black_24pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C88F9D5D2192756E00D9EF81 /* outline_time_to_leave_black_24pt_2x.png */; };
+		D474A8CB21A1CF3600C26CE7 /* TicketComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474A8CA21A1CF3600C26CE7 /* TicketComposer.swift */; };
+		D474A8CD21A1CF8800C26CE7 /* ticket_template.html in Resources */ = {isa = PBXBuildFile; fileRef = D474A8CC21A1CF8800C26CE7 /* ticket_template.html */; };
+		D474A8CF21A1D8EB00C26CE7 /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474A8CE21A1D8EB00C26CE7 /* CustomPrintPageRenderer.swift */; };
 		D49DD7BF219BACC80002768C /* AddTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49DD7BE219BACC80002768C /* AddTicketViewController.swift */; };
-		D4DA47EE219E44B70001750B /* Ticket.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4DA47EC219E44B70001750B /* Ticket.plist */; };
+		D4DA482121A0B8380001750B /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4DA482021A0B8370001750B /* PreviewViewController.swift */; };
+		D4DA482421A0BBFC0001750B /* Ticket.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4DA482221A0BBFB0001750B /* Ticket.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,8 +71,12 @@
 		C88F9D5B2192756E00D9EF81 /* outline_receipt_black_24pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline_receipt_black_24pt_2x.png; sourceTree = "<group>"; };
 		C88F9D5C2192756E00D9EF81 /* outline_location_on_black_24pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline_location_on_black_24pt_2x.png; sourceTree = "<group>"; };
 		C88F9D5D2192756E00D9EF81 /* outline_time_to_leave_black_24pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline_time_to_leave_black_24pt_2x.png; sourceTree = "<group>"; };
+		D474A8CA21A1CF3600C26CE7 /* TicketComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketComposer.swift; sourceTree = "<group>"; };
+		D474A8CC21A1CF8800C26CE7 /* ticket_template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ticket_template.html; sourceTree = "<group>"; };
+		D474A8CE21A1D8EB00C26CE7 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
 		D49DD7BE219BACC80002768C /* AddTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTicketViewController.swift; sourceTree = "<group>"; };
-		D4DA47ED219E44B70001750B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = FinalProject/Base.lproj/Ticket.plist; sourceTree = SOURCE_ROOT; };
+		D4DA482021A0B8370001750B /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		D4DA482321A0BBFB0001750B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = FinalProject/Base.lproj/Ticket.plist; sourceTree = "<group>"; };
 		E520C59698691F60939E379B /* Pods-FinalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FinalProject/Pods-FinalProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +129,7 @@
 		3C4AA09D218C9098006DE138 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				D4DA481F21A0B7CF0001750B /* Ticket */,
 				3C294EC5219B69480027042B /* Contact */,
 				3C294EC0219B43C00027042B /* ParkingLocation */,
 				3C69724F219652C000DF9C23 /* Menu */,
@@ -142,8 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				C88F9D4B2192646C00D9EF81 /* MenuTableTableViewController.swift */,
-				D49DD7BE219BACC80002768C /* AddTicketViewController.swift */,
-				D4DA47EC219E44B70001750B /* Ticket.plist */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -192,6 +199,19 @@
 				C88F9D5D2192756E00D9EF81 /* outline_time_to_leave_black_24pt_2x.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		D4DA481F21A0B7CF0001750B /* Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				D4DA482221A0BBFB0001750B /* Ticket.plist */,
+				D474A8CC21A1CF8800C26CE7 /* ticket_template.html */,
+				D474A8CE21A1D8EB00C26CE7 /* CustomPrintPageRenderer.swift */,
+				D49DD7BE219BACC80002768C /* AddTicketViewController.swift */,
+				D4DA482021A0B8370001750B /* PreviewViewController.swift */,
+				D474A8CA21A1CF3600C26CE7 /* TicketComposer.swift */,
+			);
+			path = Ticket;
 			sourceTree = "<group>";
 		};
 		EF60AE35A371656BA6890AC7 /* Frameworks */ = {
@@ -273,9 +293,10 @@
 				C88F9D622192756F00D9EF81 /* outline_person_black_24pt_2x.png in Resources */,
 				3C4AA0A4218C9098006DE138 /* Main.storyboard in Resources */,
 				C88F9D5E2192756F00D9EF81 /* outline_home_black_24pt_2x.png in Resources */,
-				D4DA47EE219E44B70001750B /* Ticket.plist in Resources */,
+				D4DA482421A0BBFC0001750B /* Ticket.plist in Resources */,
 				C88F9D632192756F00D9EF81 /* outline_receipt_black_24pt_2x.png in Resources */,
 				3CC9AE64219A083500BD2E75 /* outline_contact_support_black_24dp.png in Resources */,
+				D474A8CD21A1CF8800C26CE7 /* ticket_template.html in Resources */,
 				3CC9AE63219A083500BD2E75 /* outline_mail_outline_black_24dp.png in Resources */,
 				C88F9D612192756F00D9EF81 /* outline_assessment_black_24pt_2x.png in Resources */,
 				C88F9D652192756F00D9EF81 /* outline_time_to_leave_black_24pt_2x.png in Resources */,
@@ -362,6 +383,7 @@
 			files = (
 				3C294EC2219B43FF0027042B /* ParkingLocationViewController.swift in Sources */,
 				3C3AC877218CC9E00099B741 /* LoginViewController.swift in Sources */,
+				D474A8CF21A1D8EB00C26CE7 /* CustomPrintPageRenderer.swift in Sources */,
 				3C4AA0A1218C9098006DE138 /* LauncherViewController.swift in Sources */,
 				D49DD7BF219BACC80002768C /* AddTicketViewController.swift in Sources */,
 				3C4AA09F218C9098006DE138 /* AppDelegate.swift in Sources */,
@@ -371,6 +393,8 @@
 				3C3AC879218CF90E0099B741 /* RegisterViewController.swift in Sources */,
 				3C6993CF2190D70900BEA7C9 /* Utils.swift in Sources */,
 				3C294EC7219B69670027042B /* ContactViewController.swift in Sources */,
+				D4DA482121A0B8380001750B /* PreviewViewController.swift in Sources */,
+				D474A8CB21A1CF3600C26CE7 /* TicketComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,10 +417,10 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		D4DA47EC219E44B70001750B /* Ticket.plist */ = {
+		D4DA482221A0BBFB0001750B /* Ticket.plist */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D4DA47ED219E44B70001750B /* Base */,
+				D4DA482321A0BBFB0001750B /* Base */,
 			);
 			name = Ticket.plist;
 			sourceTree = "<group>";

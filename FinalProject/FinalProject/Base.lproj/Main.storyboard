@@ -821,7 +821,7 @@
                                     <outlet property="delegate" destination="a7R-OI-6io" id="XYx-9v-vUN"/>
                                 </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="XAS-jg-1P3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Acura" translatesAutoresizingMaskIntoConstraints="NO" id="XAS-jg-1P3">
                                 <rect key="frame" x="20" y="110" width="104" height="95"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -973,15 +973,61 @@
                         <outlet property="txtPaymentMethod" destination="CkK-Zo-lBZ" id="csX-rF-ltu"/>
                         <outlet property="txtPlate" destination="bvJ-6B-QTy" id="Z4r-Lx-jiW"/>
                         <outlet property="txtSpot" destination="gdm-lb-ad9" id="iVd-gM-ojB"/>
+                        <segue destination="L6F-8y-lDT" kind="show" identifier="toPreviewVC" id="9Hd-wm-h4N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L8e-LC-2ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2261.5999999999999" y="750.67466266866575"/>
         </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="jQI-oa-C7P">
+            <objects>
+                <viewController id="L6F-8y-lDT" customClass="PreviewViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YHr-AP-610">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JTD-L7-DhQ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="525"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3EN-KG-wED">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.52514165639999999" green="0.83333677049999999" blue="0.9447386861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PbF-gF-T3u"/>
+                                    <barButtonItem title="Generate PDF" id="z6T-JL-uxS">
+                                        <connections>
+                                            <action selector="btnGeneratePDF:" destination="L6F-8y-lDT" id="bHp-xx-5dh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qyU-Re-Gjt"/>
+                                </items>
+                                <color key="tintColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BGN-e7-3ai"/>
+                    </view>
+                    <connections>
+                        <outlet property="myWebView" destination="JTD-L7-DhQ" id="Vjn-hS-aet"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTH-q7-BXd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3008.8000000000002" y="750.67466266866575"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="icon" width="512" height="512"/>
+        <image name="Acura" width="80" height="60"/>
+        <image name="icon" width="60" height="60"/>
         <image name="outline_assessment_black_24pt_2x.png" width="48" height="48"/>
         <image name="outline_contact_support_black_24dp.png" width="48" height="48"/>
         <image name="outline_exit_to_app_black_24pt_2x.png" width="48" height="48"/>
@@ -992,6 +1038,6 @@
         <image name="outline_receipt_black_24pt_2x.png" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m59-mF-nHc"/>
+        <segue reference="3Wm-PQ-cTd"/>
     </inferredMetricsTieBreakers>
 </document>

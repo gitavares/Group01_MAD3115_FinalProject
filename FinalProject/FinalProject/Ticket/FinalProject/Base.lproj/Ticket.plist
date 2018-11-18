@@ -67,13 +67,14 @@
 	</array>
 	<key>Timing</key>
 	<array>
-		<string>0</string>
-		<string>1</string>
+		<string>1.0</string>
 		<string>1.5</string>
-		<string>2</string>
+		<string>2.0</string>
 		<string>2.5</string>
-		<string>3</string>
-		<string>24</string>
+		<string>3.0</string>
+		<string>3.5</string>
+		<string>4.0</string>
+		<string>24.0</string>
 	</array>
 	<key>PaymentMethod</key>
 	<array>
