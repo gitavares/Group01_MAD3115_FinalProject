@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content='text/html; charset=utf-8' http-equiv='content-type'>
+            <title>HTML ticket template</title>
+            <style>
+                .ticket-box{
+                    max-width:800px;
+                    margin:auto;
+                    padding:30px;
+                    /*border:1px solid #eee;*/
+                    /*box-shadow:0 0 10px rgba(0, 0, 0, .15); */
+                    font-size:20px;
+                    line-height:26px;
+                    font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+                    color:black;
+                }
+            
+            .ticket-box table{
+                width:100%;
+                line-height:inherit;
+                text-align:left;
+            }
+            
+            .ticket-box table td{
+                padding:5px;
+                vertical-align:middle;
+            }
+            
+            .ticket-box table tr td:nth-child(2){
+                text-align:right;
+            }
+            
+            .ticket-box table tr.top table td{
+                padding-bottom:20px;
+            }
+            
+            .ticket-box table tr.top table td.title{
+                font-size:32px;
+                line-height:32px;
+                color:#333;
+            }
+            
+            .ticket-box table tr.information table td{
+                padding-bottom:40px;
+            }
+            
+            .ticket-box table tr.heading td{
+                background:#00FDFF;
+                border-bottom:1px solid #ddd;
+                font-weight:bold;
+            }
+            
+            .ticket-box table tr.details td{
+/*                 padding-bottom:20px; */
+                border:1px solid #ddd;
+            }
+            
+            .ticket-box table tr.item td{
+                border-bottom:1px solid #eee;
+            }
+            
+            .ticket-box table tr.item.last td{
+                border-bottom:none;
+            }
+            
+            .ticket-box table tr.heading td:nth-child(1){
+                border-right:none;
+                font-weight:bold;
+                color: darkBlue;
+            }
+            
+            .ticket-box table tr.heading td:nth-child(2){
+                border-right:none;
+                font-weight:bold;
+                color: darkBlue;
+            }
+            
+            .ticket-box table tr.details td:nth-child(1){
+                border-right:none;
+                color: blue;
+            }
+            
+            .ticket-box table tr.details td:nth-child(2){
+                border-left:none;
+                color: blue;
+            }
+            
+            .ticket-box table tr.details td:nth-child(3){
+                border-left:none;
+                color: blue;
+            }
+            
+            .ticket-box table tr.total{
+                border-top:2px solid #eee;
+                font-weight:bold;
+                color: white;
+                background-color: darkBlue;
+                text-align: right;
+            }
+            
+            @media only screen and (max-width: 600px) {
+                .ticket-box table tr.top table td{
+                    width:100%;
+                    display:block;
+                    text-align:center;
+                }
+                
+                .ticket-box table tr.information table td{
+                    width:100%;
+                    display:block;
+                    text-align:center;
+                }
+            }
+            </style>
+            </head>
+    <body>
+        <div class='ticket-box'>
+            <table cellpadding='0' cellspacing='0'>
+                <tbody>
+                    <tr class='top'>
+<!--                        <td class='title'> <img src='icon.png' style='width:100%; max-width:200px; background-color: #cdcdcd'> </td>-->
+						<td> <b>Ticket Number:</b> #TICKET_NUMBER# <br> #TICKET_DATE# </td>
+					</tr>
+				</tbody>
+			</table>
+            <table cellpadding='0' cellspacing='0'>
+                <tbody>
+                    <tr class='heading'>
+                        <td><h4> Ticket Details </h4></td>
+                        <td colspan='2'></td>
+                    </tr>
+                    <tr class='heading'>
+                        <td> Plate </td>
+                        <td colspan='2'></td>
+                    </tr>
+                    <tr class='details'>
+                        <td> #PLATE# </td>
+                        <td colspan='2'></td>
+                    </tr>
+                    <tr class='heading'>
+                        <td> Make </td>
+                        <td colspan='2'> Color </td>
+                    </tr>
+                    <tr class='details'>
+                        <td> #MAKE# </td>
+                        <td colspan='2'> #COLOR# </td>
+                    </tr>
+ 
+                    <tr class='heading'>
+                        <td> Timing </td>
+                        <td colspan='2'> Location </td>
+                    </tr>
+                    <tr class='details'>
+                        <td> #HOURS# </td>
+                        <td colspan='2'> #LOT# - #SPOT# </td>
+                    </tr>
+ 
+                    <tr class='heading'>
+                        <td> Payment Method </td>
+                        <td colspan='2'> </td>
+                    </tr>                    
+                    <tr class='details'>
+                        <td> #PAYMENT_METHOD# </td>
+                        <td colspan='2'> </td>
+                    </tr>
+                    <tr class='total'>
+                        <td colspan='3'> Total:&nbsp;&nbsp;&nbsp; #TOTAL_AMOUNT# </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </body>
+</html>

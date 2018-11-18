@@ -24,6 +24,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         txtEmail.delegate = self
         txtPassword.delegate = self
         
+        txtEmail.text = "gitavares@hotmail.com"
+        txtPassword.text = "654321"
+
         self.hideKeyboard()
         
         ref = Database.database().reference()

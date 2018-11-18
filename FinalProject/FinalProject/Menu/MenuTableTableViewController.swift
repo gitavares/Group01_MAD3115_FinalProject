@@ -40,7 +40,7 @@ class MenuTableTableViewController: UITableViewController {
             case 0:
                 home()
             case 1:
-                print("Add Ticket")
+                ticket()
             case 2:
                 guard let uid = Auth.auth().currentUser?.uid else { return }
                 ref.child("users/profile/\(uid)/tickets").observe(.value, with: { snapshot in
@@ -90,6 +90,10 @@ class MenuTableTableViewController: UITableViewController {
     
     func contact() {
         self.performSegue(withIdentifier: "contactVC", sender: self)
+    }
+
+    func ticket() {
+        self.performSegue(withIdentifier: "ticketVC", sender: self)
     }
     
     func instructions() {
