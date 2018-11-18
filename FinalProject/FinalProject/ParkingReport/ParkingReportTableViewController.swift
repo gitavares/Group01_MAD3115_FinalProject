@@ -42,7 +42,7 @@ class ParkingReportTableViewController: UIViewController, UITableViewDataSource,
     }
 
     func loadTickets() {
-        ref.child("users/profile/\(uid!)/tickets").observe(.childAdded, with: { (snapshot) in
+        ref.child("users/profile/\(uid!)/tickets").queryOrdered(byChild: "date").observe(.childAdded, with: { (snapshot) in
             
             let results = snapshot.value as? [String : AnyObject]
             let carMake = results?["carMake"]
@@ -96,7 +96,7 @@ class ParkingReportTableViewController: UIViewController, UITableViewDataSource,
         cell.lblDuration?.text = "Duration: \(ticket.timing ?? "") hr(s)"
         cell.lblLotSpot?.text = "Lot: \(ticket.lot ?? "") | Spot: \(ticket.spot ?? "")"
         cell.lblPaymentMethod?.text = "Payment method: \(ticket.paymentMethod ?? "")"
-        cell.lblTotalAmount?.text = "$ \(ticket.ticketAmount ?? 0)"
+        cell.lblTotalAmount?.text = "\(ticket.ticketAmount?.curr() ?? "")"
         
         return cell
         

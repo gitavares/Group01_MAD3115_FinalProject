@@ -68,7 +68,7 @@ class ParkingLocationViewController: UIViewController, MKMapViewDelegate, CLLoca
         currentLongitude = locValue.longitude
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         
-        // lambton location
+        // spotLocation = lambton location
         let spotLocation = CLLocationCoordinate2DMake(43.776394, -79.3332287)
         let currentLocation = CLLocationCoordinate2DMake(currentLatitude ?? 43.773318, currentLongitude ?? -79.3360205)
         

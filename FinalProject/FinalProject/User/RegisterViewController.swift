@@ -153,12 +153,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                             }
                         }
                     } else {
-                        print("Error saving User Profile: \(error)")
+                        print("Error saving User Profile: \(String(describing: error))")
                     }
                 }
                 
             } else {
-                print("Error creating User: \(error)")
+                print("Error creating User: \(String(describing: error))")
             }
         }
     }
