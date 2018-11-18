@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 //import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var alertMessage = UIApplication.shared.delegate as! AppDelegate
     var ref: DatabaseReference!
@@ -20,6 +20,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        txtEmail.delegate = self
+        txtPassword.delegate = self
+        
+        self.hideKeyboard()
         
         ref = Database.database().reference()
         
@@ -60,6 +65,12 @@ class LoginViewController: UIViewController {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let childUpdates = ["lastLogin": Date().currentDateTime]
         ref.child("users/profile/\(uid)").updateChildValues(childUpdates)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        txtEmail.resignFirstResponder()
+        txtPassword.resignFirstResponder()
+        return true
     }
     
     
