@@ -30,7 +30,6 @@ class MenuTableTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return section == 0 ? 4 : 3
         return 4
     }
     
