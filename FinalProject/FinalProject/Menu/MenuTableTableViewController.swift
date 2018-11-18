@@ -35,7 +35,7 @@ class MenuTableTableViewController: UITableViewController {
         if tableView.indexPathForSelectedRow?.section == 0 {
             switch indexPath.row {
             case 0:
-                print("Home")
+                home()
             case 1:
                 print("Add Ticket")
             case 2:
@@ -82,6 +82,10 @@ class MenuTableTableViewController: UITableViewController {
     
     func instructions() {
         self.performSegue(withIdentifier: "instructionVC", sender: self)
+    }
+    func home()
+    {
+        self.performSegue(withIdentifier: "homeVC", sender: self)
     }
 
     /*

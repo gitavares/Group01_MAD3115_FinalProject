@@ -12,12 +12,10 @@ import Firebase
 //import FirebaseUI
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
     var alert: UIAlertController?
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
@@ -32,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
 //        GIDSignIn.sharedInstance().delegate = self as? GIDSignInDelegate
-        
+    
         return true
     }
     

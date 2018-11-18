@@ -26,6 +26,8 @@
 		BE42802D94B29D6B10FCF298 /* Pods_FinalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4B94397762FE5AC271FA787 /* Pods_FinalProject.framework */; };
 		C8185C2E219CB65D00F0A04E /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8185C2D219CB65D00F0A04E /* InstructionViewController.swift */; };
 		C8185C30219CB96F00F0A04E /* Instructions.html in Resources */ = {isa = PBXBuildFile; fileRef = C8185C2F219CB96F00F0A04E /* Instructions.html */; };
+		C86EBD00219E3C7400B3E319 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86EBCFF219E3C7400B3E319 /* HomeViewController.swift */; };
+		C86EBD02219E402900B3E319 /* Car.png in Resources */ = {isa = PBXBuildFile; fileRef = C86EBD01219E402900B3E319 /* Car.png */; };
 		C88F9D4C2192646C00D9EF81 /* MenuTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F9D4B2192646C00D9EF81 /* MenuTableTableViewController.swift */; };
 		C88F9D5E2192756F00D9EF81 /* outline_home_black_24pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C88F9D562192756E00D9EF81 /* outline_home_black_24pt_2x.png */; };
 		C88F9D5F2192756F00D9EF81 /* outline_exit_to_app_black_24pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C88F9D572192756E00D9EF81 /* outline_exit_to_app_black_24pt_2x.png */; };
@@ -60,6 +62,8 @@
 		C4B94397762FE5AC271FA787 /* Pods_FinalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FinalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8185C2D219CB65D00F0A04E /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		C8185C2F219CB96F00F0A04E /* Instructions.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Instructions.html; sourceTree = "<group>"; };
+		C86EBCFF219E3C7400B3E319 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C86EBD01219E402900B3E319 /* Car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Car.png; sourceTree = "<group>"; };
 		C88F9D4B2192646C00D9EF81 /* MenuTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableTableViewController.swift; sourceTree = "<group>"; };
 		C88F9D562192756E00D9EF81 /* outline_home_black_24pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline_home_black_24pt_2x.png; sourceTree = "<group>"; };
 		C88F9D572192756E00D9EF81 /* outline_exit_to_app_black_24pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline_exit_to_app_black_24pt_2x.png; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		3C4AA09D218C9098006DE138 /* FinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				C86EBCFE219E3C5100B3E319 /* Home */,
 				C8185C2C219CB61400F0A04E /* Instructions */,
 				3C294EC5219B69480027042B /* Contact */,
 				3C294EC0219B43C00027042B /* ParkingLocation */,
@@ -184,9 +189,18 @@
 			path = Instructions;
 			sourceTree = "<group>";
 		};
+		C86EBCFE219E3C5100B3E319 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C86EBCFF219E3C7400B3E319 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		C88F9D552192756200D9EF81 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C86EBD01219E402900B3E319 /* Car.png */,
 				3CC9AE62219A083400BD2E75 /* outline_contact_support_black_24dp.png */,
 				3CC9AE61219A083400BD2E75 /* outline_mail_outline_black_24dp.png */,
 				3CC9AE572199F1DE00BD2E75 /* giselle.jpg */,
@@ -276,6 +290,7 @@
 				C88F9D642192756F00D9EF81 /* outline_location_on_black_24pt_2x.png in Resources */,
 				3CC9AE582199F1DE00BD2E75 /* giselle.jpg in Resources */,
 				3C3AC8AC218D580E0099B741 /* GoogleService-Info.plist in Resources */,
+				C86EBD02219E402900B3E319 /* Car.png in Resources */,
 				3C4AA0A6218C909D006DE138 /* Assets.xcassets in Resources */,
 				C88F9D5F2192756F00D9EF81 /* outline_exit_to_app_black_24pt_2x.png in Resources */,
 				C88F9D622192756F00D9EF81 /* outline_person_black_24pt_2x.png in Resources */,
@@ -379,6 +394,7 @@
 				3C3AC879218CF90E0099B741 /* RegisterViewController.swift in Sources */,
 				3C6993CF2190D70900BEA7C9 /* Utils.swift in Sources */,
 				3C294EC7219B69670027042B /* ContactViewController.swift in Sources */,
+				C86EBD00219E3C7400B3E319 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

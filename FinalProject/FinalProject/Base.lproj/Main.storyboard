@@ -32,7 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-538" y="484"/>
+            <point key="canvasLocation" x="-204" y="765"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="UY9-Sr-uZe">
@@ -119,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLF-zl-v83" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="262" y="-157"/>
+            <point key="canvasLocation" x="758" y="51"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="zJH-VJ-XHq">
@@ -161,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HpD-Zm-Qb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-538" y="-314"/>
+            <point key="canvasLocation" x="108" y="22"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="tq3-1u-tYe">
@@ -694,6 +694,7 @@
                         <segue destination="Qwx-RY-6JQ" kind="show" identifier="locationVC" id="6tE-rj-ogh"/>
                         <segue destination="3ge-5T-RbB" kind="show" identifier="contactVC" id="oYS-an-a0w"/>
                         <segue destination="hNX-Xp-ZLb" kind="show" identifier="instructionVC" id="yWg-F7-q3A"/>
+                        <segue destination="fRV-YJ-23D" kind="show" identifier="homeVC" id="yjw-IN-VvF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="20c-x1-fY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -804,6 +805,43 @@
             </objects>
             <point key="canvasLocation" x="1224.8" y="1559.3703148425789"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="MaM-MD-duj">
+            <objects>
+                <viewController id="fRV-YJ-23D" customClass="HomeViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="26o-rB-DgW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Your Total Parking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUz-ZA-LAh">
+                                <rect key="frame" x="80" y="105" width="215" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWa-xd-BQN">
+                                <rect key="frame" x="160" y="201" width="54" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.54912265920000003" blue="0.38660163120000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Car.png" translatesAutoresizingMaskIntoConstraints="NO" id="Qnn-yk-xPl">
+                                <rect key="frame" x="110" y="302" width="154" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.59215686274509804" green="0.82745098039215681" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Js-AD-1u6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QZm-eT-yMg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2078" y="1559"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="AJK-ZM-cHM">
             <objects>
@@ -824,6 +862,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Car.png" width="512" height="352"/>
         <image name="icon" width="512" height="512"/>
         <image name="outline_assessment_black_24pt_2x.png" width="48" height="48"/>
         <image name="outline_contact_support_black_24dp.png" width="48" height="48"/>
