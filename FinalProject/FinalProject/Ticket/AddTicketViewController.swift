@@ -193,9 +193,6 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         saveTicket() { success in
             if success {
                 print("ticket added")
-    //                let sb = UIStoryboard(name: "Main", bundle: nil)
-    //                let navMenuVC = sb.instantiateViewController(withIdentifier: "navMenuVC")
-    //                self.present(navMenuVC, animated: true, completion: nil)
                 self.performSegue(withIdentifier: "toPreviewVC", sender: self)
             } else {
                 print("some error creating the ticket")
@@ -215,6 +212,7 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         let id = Int.random(in: 0 ... 1000000) // implemented
         
         guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let email = Auth.auth().currentUser?.email else { return }
         
         let databaseRef = Database.database().reference().child("users/profile/\(uid)/tickets/\(id)")
         var ticketObject = ["carPlate": txtPlate.text!,
@@ -235,6 +233,7 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         ticketDetails = ticketObject as! [String : String]
         ticketDetails ["id"] = "\(id)"
         ticketDetails ["logoImage"] = self.logoImg
+        ticketDetails ["email"] = email
         
     }
  
