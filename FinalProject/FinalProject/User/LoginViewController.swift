@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 //import GoogleSignIn
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     var alertMessage = UIApplication.shared.delegate as! AppDelegate
     var ref: DatabaseReference!
@@ -21,28 +21,22 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref = Database.database().reference()
+        txtEmail.delegate = self
+        txtPassword.delegate = self
         
         txtEmail.text = "gitavares@hotmail.com"
         txtPassword.text = "654321"
+
+        self.hideKeyboard()
         
-//        GIDSignIn.sharedInstance().uiDelegate = self as? GIDSignInUIDelegate
-//        GIDSignIn.sharedInstance().signInSilently()
+        ref = Database.database().reference()
         
-        
-//        handle = Auth.auth().addStateDidChangeListener() { (auth, user) in
-//            if user != nil {
-//                MeasurementHelper.sendLoginEvent()
-//                self.performSegue(withIdentifier: Constants.Segues.SignInToFp, sender: nil)
-//            }
-//        }
     }
     
     @IBAction func btnLogin(_ sender: UIButton) {
         
         Auth.auth().signIn(withEmail: txtEmail.text!, password: txtPassword.text!) { user, error in
             if error == nil && user != nil {
-//                self.dismiss(animated: false, completion: nil)
                 self.saveLastLogin()
                 
                 let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -62,22 +56,10 @@ class LoginViewController: UIViewController {
         ref.child("users/profile/\(uid)").updateChildValues(childUpdates)
     }
     
-    
-//    deinit {
-//        if let handle = handle {
-//            Auth.auth().removeStateDidChangeListener(handle)
-//        }
-//    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        txtEmail.resignFirstResponder()
+        txtPassword.resignFirstResponder()
+        return true
     }
-    */
 
 }

@@ -10,6 +10,9 @@ import UIKit
 import Firebase
 
 class MenuTableTableViewController: UITableViewController {
+    
+    var ref: DatabaseReference = Database.database().reference()
+    var alert: UIAlertController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +38,20 @@ class MenuTableTableViewController: UITableViewController {
         if tableView.indexPathForSelectedRow?.section == 0 {
             switch indexPath.row {
             case 0:
-                print("Home")
+                home()
             case 1:
                 ticket()
             case 2:
-                print("Report")
+                guard let uid = Auth.auth().currentUser?.uid else { return }
+                ref.child("users/profile/\(uid)/tickets").observe(.value, with: { snapshot in
+                    if snapshot.childrenCount > 0 {
+                        self.report()
+                    } else {
+                        self.alert = UIAlertController(title: "No tickets", message: "You don't have any ticket to open the Report", preferredStyle: .alert)
+                        self.alert!.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                        self.present(self.alert!, animated: true)
+                    }
+                })
             case 3:
                 location()
             default:
@@ -50,7 +62,7 @@ class MenuTableTableViewController: UITableViewController {
                 case 0:
                     editProfile()
                 case 1:
-                    print("Instructions")
+                    instructions()
                 case 2:
                     contact()
                 case 3:
@@ -79,10 +91,22 @@ class MenuTableTableViewController: UITableViewController {
     func contact() {
         self.performSegue(withIdentifier: "contactVC", sender: self)
     }
+
     func ticket() {
         self.performSegue(withIdentifier: "ticketVC", sender: self)
     }
     
+    func instructions() {
+        self.performSegue(withIdentifier: "instructionVC", sender: self)
+    }
+  
+    func report() {
+        self.performSegue(withIdentifier: "reportVC", sender: self)
+    }
+    
+    func home() {
+        self.performSegue(withIdentifier: "homeVC", sender: self)
+    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
