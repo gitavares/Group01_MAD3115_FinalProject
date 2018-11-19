@@ -215,6 +215,7 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         let id = Int.random(in: 0 ... 1000000) // implemented
         
         guard let uid = Auth.auth().currentUser?.uid else { return }
+        guard let email = Auth.auth().currentUser?.email else { return }
         
         let databaseRef = Database.database().reference().child("users/profile/\(uid)/tickets/\(id)")
         var ticketObject = ["carPlate": txtPlate.text!,
@@ -235,7 +236,7 @@ class AddTicketViewController: UIViewController, UITextFieldDelegate, UIPickerVi
         ticketDetails = ticketObject as! [String : String]
         ticketDetails ["id"] = "\(id)"
         ticketDetails ["logoImage"] = self.logoImg
-        
+        ticketDetails ["email"] = email
     }
  
      // MARK: - Navigation

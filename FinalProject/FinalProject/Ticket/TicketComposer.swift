@@ -45,6 +45,9 @@ class TicketComposer: NSObject
             // Ticket date.
             HTMLContent = HTMLContent.replacingOccurrences(of: "#TICKET_DATE#", with:ticketDetails["date"]!)
             
+            // Email.
+            HTMLContent = HTMLContent.replacingOccurrences(of: "#EMAIL#", with:ticketDetails["email"]!)
+            
             // Car Plate.
             HTMLContent = HTMLContent.replacingOccurrences(of: "#PLATE#", with: ticketDetails["carPlate"]!)
             
